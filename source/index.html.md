@@ -21,13 +21,57 @@ search: true
 
 # Introduction
 
-Welcome to the SelfKey API! You can use our API to access SelfKey API endpoints, which can get information on various cats, kittens, and breeds in our database.
+<b>Welcome to the SelfKey API.</b>
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+You can use our API to access endpoints in the SelfKey Identity Wallet desktop application and the SelfKey Extension browser plugin. You can also view code examples in the dark area to the right, switching languages between the tabs. If anything is unclear, please contact us at [help@selfkey.org](mailto:help@selfkey.org).
 
-This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation.
+# SelfKey Extension
 
-# Login With SelfKey
+## Overview
+By installing the SelfKey Extension browser plugin, a user can deploy their blockchain address for authentication with your website. The SelfKey Identity Wallet (Mac OS/Win/Linux) acts as the backend layer that connects to the Ethereum blockchain.
+
+## Part 1: User Requirements
+To successfully use their blockchain address as an authentication method, there are two applications that must be installed and activated by the user. If both steps below are not completed, there will be instructions on how to fix this after clicking "Login" on your website.
+
+* Step 1: [SelfKey Identity Wallet] (https://selfkey.org/download/) must be installed, opened, and logged in to an Ethereum address.
+* Step 2: [Selfkey Extension] browser plugin must be installed and activated.
+
+## Part 2: Frontend Integration
+
+To enable the SelfKey Extension as an authentication method for your website, a JavaScript library needs to be installed. This displays a "Login With SelfKey" button on your website for users to click. Clicking this button starts the login workflow. Exact instructions can be found in [Selfkey Client Lib] and more information at [LWS Config].
+
+## Part 3: Backend Integration
+
+Are you using our compliance tool [KYC-Chain] (https://www.kyc-chain.com) or an in-house solution for verifying the identities of new users?
+
+We have <b>two options</b> for the backend integration of the SelfKey Extension.
+
+### Option 1: For Non KYC-Chain Clients
+
+The following endpoint should be implemented on your backend: [Authentication & Proof Of Ownership Challenge-Response, LWS]
+
+* Authentication – Challenge
+* Authentication – Challenge Reply
+* LWS - Create User file
+* LWS - Get user token
+* LWS - Login endpoint (optional if onAuthCallback is implemented)
+
+Currently we don't to have tools to make this process easier, but there are several options:
+
+* Selfkey Node.js lib
+* Selfkey ASP.NET lib
+* Selfkey Service
+
+### Option 2: For KYC-Chain Clients
+
+If your website is integrated with KYC-Chain, you can leverage our existing Authentication & Proof Of Ownership Challenge-Response endpoints:
+
+1. KYC Chain should configure your instance to use RSA algorithm for token signatures.
+2. You should receive a RSA public key and configure it for token verification.
+3. You should override authentication endpoints in their config to point to KYC-Chain.
+
+
+## Part 4: Flowchart
 
 > To authorize, use this code:
 
@@ -55,13 +99,10 @@ const kittn = require('kittn');
 let api = kittn.authorize('meowmeowmeow');
 ```
 
-> Make sure to replace `meowmeowmeow` with your API key.
+> Dolor sit amet `Lorem Ipsum` incididunt ut labore et dolore magna aliqua.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
+`Authorization: Lorem Ipsum`
 
 <aside class="notice">
 You must replace <code>meowmeowmeow</code> with your personal API key.
