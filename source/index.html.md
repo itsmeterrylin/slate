@@ -1,15 +1,17 @@
 ---
-title: API Reference
+title: SelfKey API Documents
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
-  - ruby
-  - python
   - javascript
+  - react
+  - vue
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
+  - <a href='https://www.selfkey.org/download'>Download - SelfKey Identity Wallet</a>
+  - <a href='https://github.com/lord/slate'>Download - SelfKey Extension</a>
+  - <br>
+  - <a href='mailto:help@selfkey.org'>help@selfkey.org</a>
 
 includes:
   - errors
