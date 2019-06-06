@@ -21,7 +21,9 @@ search: true
 
 <b>Welcome to the SelfKey API.</b>
 
-You can use our API to access endpoints in the SelfKey Identity Wallet desktop application and the SelfKey Extension browser plugin. You can also view code examples in the dark area to the right, switching languages between the tabs. If anything is unclear, please contact us at [help@selfkey.org](mailto:help@selfkey.org).
+You can use our API to access endpoints in the SelfKey Identity Wallet desktop application and the SelfKey Extension browser plugin. You can also view code examples in the dark area to the right, switching languages between the tabs.
+
+If anything is unclear, please contact us at [help@selfkey.org](mailto:help@selfkey.org) and we can help you with the integrations.
 
 # SelfKey Extension
 
@@ -46,9 +48,9 @@ To enable the SelfKey Extension as an authentication method for your website, a 
 
 ### Installation Instructions:
 
-1. Integrate Selfkey Client Lib into the webpage
-2. Select where you want the "Login With SelfKey" button to appear
-3. Initialize the "Login With SelfKey" button by passing LWS Config specific to Relying Party to Selfkey Client Lib
+1. Integrate *Selfkey Client Lib* into the webpage
+2. Select where you want the *"Login With SelfKey"* button to appear
+3. Initialize the *"Login With SelfKey"* button by passing LWS Config to *Selfkey Client Lib*
 
 
 ## Part 3: Backend Integration
@@ -65,17 +67,17 @@ We have two options for the SelfKey Extension backend integration.
 
 The following endpoint should be implemented on your backend: [Authentication & Proof Of Ownership Challenge-Response, LWS]
 
-* Authentication – Challenge
-* Authentication – Challenge Reply
-* LWS - Create User file
-* LWS - Get user token
-* LWS - Login endpoint (optional if onAuthCallback is implemented)
+* **Authentication** – Challenge
+* **Authentication** – Challenge Reply
+* **LWS** - Create User file
+* **LWS** - Get user token
+* **LWS** - Login endpoint (optional if onAuthCallback is implemented)
 
 Currently we don't to have tools to make this process easier, but there are several options:
 
-* [Selfkey Node.js lib] - WORK IN PROGRESS
-* [Selfkey ASP.NET lib] - WORK IN PROGRESS
-* [Selfkey Service] - WORK IN PROGRESS
+* **[Selfkey Node.js lib]** - WORK IN PROGRESS
+* **[Selfkey ASP.NET lib]** - WORK IN PROGRESS
+* **[Selfkey Service]** - WORK IN PROGRESS
 
 ### Option 2: For KYC-Chain Clients
 
@@ -104,10 +106,10 @@ Information on cryptocurrency exchanges are loaded into the SelfKey Identity Wal
 ### How To Integrate A New Exchange (Non KYC-Chain Clients):
 
 1. Add details to the Airtable.
-2. Build config object according to this spec (Requirements should be negotiated with the relying party)
-3. Paste it as JSON inside 'relying_party_config' field.
+2. Build config object according to this spec (Requirements should be negotiated with your website)
+3. Paste it as JSON inside *'relying_party_config'* field.
 
-> Configuration:
+####
 
 ```shell
 {
@@ -132,9 +134,7 @@ Information on cryptocurrency exchanges are loaded into the SelfKey Identity Wal
 
 ### How To Integrate A New Exchange (KYC-Chain Clients)
 
-Integration with crypto exchanges that use KYCC is far more seamless.
-They will not need to implement anything marketplace related on their site.
-The configuration for them will usually look like this:
+Integration with crypto exchanges that use KYC-Chain for compliance is far more seamless because there is a default integration built in with SelfKey. The configuration for them will usually look like this to the right:
 
 
 ### For KYC-Chain
@@ -147,7 +147,7 @@ The configuration for them will usually look like this:
 ### For Independent Integrators (Non KYC-Chain Clients):
 
 Currently there are no tools are available for independent implementation.
-The only option is to implement the API calls described in [KYC (Marketplace)] and [Authentication].
+The only option is to implement the API calls described in *KYC (Marketplace)* and *[Authentication]*.
 A Node.JS tutorial for implementing the endpoints can be found here: Simple Relying Party Implementation Example
 To fix this situation, we are working on the following:
 
@@ -159,8 +159,6 @@ To fix this situation, we are working on the following:
 
 
 ## 2: Incorporations
-
-> Configuration:
 
 ```shell
 const incorporationsRPDetails = {
@@ -194,7 +192,7 @@ const incorporationsRPDetails = {
 ```
 
 * Currently we have one hardcoded relying party – Flag Theory .
-* To further integrate other relying parties further development is needed
+* To further integrate other relying parties further development is needed.
 * Each jurisdiction is a template in Flag Theory KYC-Chain instance.
 
 <aside class="warning">FURTHER DEVELOPMENT NEEDED</aside>
@@ -215,7 +213,7 @@ const incorporationsRPDetails = {
 
 ## Overview
 
-The purpose of this function is to prove the user has ownership over this public key presented for authentication. To do this, we issue a "Challenge-Response" protocol to cryptographically prove ownership via private key. For Details about API endpoints, please consult: REST API Spec.
+The purpose of this function is to prove the user has ownership over this public key presented for authentication. To do this, we issue a **"Challenge-Response"** protocol to cryptographically prove ownership via private key. For Details about API endpoints, please consult: REST API Spec below.
 
 <aside class="notice">Note: All communications MUST be done via secure SSL connection.</aside>
 
@@ -228,7 +226,7 @@ The purpose of this function is to prove the user has ownership over this public
 5. The wallet replies to your website with the challenge JWT token and signature.
 6. Your website verifies that signature corresponds to the public key and nonce inside the JWT challenge token.
 7. Your website replies to the wallet by issuing a Wallet JWT token.
-8. Wallet uses the "Wallet JWT Token" to perform other requests to your website.
+8. The SelfKey Identity Wallet uses the "Wallet JWT Token" to perform other requests to your website.
 
 
 ## Part 2: JWT-JSON Web token
@@ -241,8 +239,8 @@ How To Implement JWT Tokens:
 * [Auth0 JWT Docs] (https://auth0.com/docs/jwt)
 
 ### Allowed Algorithms
-* HMAC - Default
-* RSA - Suitable for multi server authentication (STILL IN DEVELOPMENT)
+* **HMAC** - Default
+* **RSA** - Suitable for multi server authentication (STILL IN DEVELOPMENT)
 
 
 
@@ -252,11 +250,11 @@ Besides several requirements below, you are free to include any data in your tok
 
 Required Claims:
 
-* sub: (Subject) The wallet's public key
-* iat: (Issued At) the epoch timestamp that the JWT was issued at
-* exp: (Expiration)the epoch timestamp at which the JWT expires
-* nonce: (Number used Once) a random string of bytes (base64-encoded) which must be signed in order to authenticate
-* typ: "IDW_CHALLANGE"
+* **sub**: (Subject) The wallet's public key
+* **iat**: (Issued At) the epoch timestamp that the JWT was issued at
+* **exp**: (Expiration)the epoch timestamp at which the JWT expires
+* **nonce**: (Number used Once) a random string of bytes (base64-encoded) which must be signed in order to authenticate
+* **typ**: "IDW_CHALLANGE"
 * Recommended token expiration time: 30 min
 
 ## Part 4: Wallet Token
@@ -265,23 +263,306 @@ Besides several requirements below, you are free to include any data in your tok
 
 Required Claims:
 
-* sub: (Subject) The wallet's public key
-* iat: (Issued At) the epoch timestamp that the JWT was issued at
-* exp: (Expiration)the epoch timestamp at which the JWT expires
-* typ: "IDW_ACCESS"
+* **sub**: (Subject) The wallet's public key
+* **iat**: (Issued At) the epoch timestamp that the JWT was issued at
+* **exp**: (Expiration)the epoch timestamp at which the JWT expires
+* **typ**: "IDW_ACCESS"
 * Recommended token expiration time: 60 min
 
 ## Part 5: How To Verify Wallet Token On Other Servers
 
-JWT token can be verified on other servers, not just one. This allows our API to reside in several different services, not necessary all endpoints in one. For this to work, you must initialize your JWT verification logic with a shared secret key between the servers.
-
-A better approach would be to use RS256 algorithm, and have your private key be accessible only to the server that hosts the challenge/response endpoint. Afterwards, any other server that needs to verify it can use the public key.
+* JWT token can be verified on other servers, not just one.
+* This allows our API to reside in several different services, not necessary all endpoints in one.
+* For this to work, you must initialize your JWT verification logic with a shared secret key between the servers.
+* A better approach would be to use RS256 algorithm, and have your private key be accessible only to the server that hosts the challenge/response endpoint.
+* Afterwards, any other server that needs to verify it can use the public key.
 
 
 
 # Relying Party Configuration
 
 5/31/2019: Default endpoints outdated with implementation, Confluence document needs updating.
+
+## Overview
+
+Using the SelfKey Identity Wallet (desktop application) and SelfKey Extension (browser plugin), we can utilize a user's Ethereum blockchain address for authentication to your website. The configuration object has similar structure for both SelfKey Extension and SelfKey Marketplace integrations, but has several distinctions for each and is usually placed in different places.
+
+The SelfKey Extension configuration object would be usually passed directly when initialized inside selfkey-client-lib. The SelfKey Marketplace integration object will usually be stored in the Selfkey API (Airtable inside *relying_party_config field*), you will need to submit the configuration (or all relevant details) to us.
+
+## 1: Common Configuration Properties
+
+There are two main properties that exist between both objects regarding integration endpoints.
+
+### rootEndpoint
+
+* This is the default integration endpoint.
+* If no overrides, by default the SelfKey Identity Wallet will try to guess all endpoints by appending their name to it.  
+* If the *rootEndpoint* provided is not an absolute URL, it will be prepended with website URL (see website config option).
+
+*Example:*
+
+* **rootEndpoint**: "https://yoursite.com/api/v1/selfkey/"
+* The SelfKey Identity Wallet will derive auth/challenge endpoint and templates endpoint by simply appending their name to root endpoint:
+* **Challenge**: https://yoursite.com/api/v1/selfkey/auth/challange
+* **Templates**: https://yoursite.com/api/v1/selfkey/template
+
+### endpoints
+
+
+* The endpoints option contain overrides to the default API endpoint mechanisms.
+* Override config supports both absolute URLs and relative URLs.
+* Our API is configurable in terms of URLs to the point that different endpoints can run on different services as long as they can use a common [Authentication & Proof Of Ownership Challenge-Response] scheme.
+
+*Example:*
+
+**rootEndpoint of "https://yoursite.com/api/v1/selfkey/"**
+
+* Default behavior for the template endpoint is to use: https://yoursite.com/api/v1/selfkey/templates endpoint, but there are two options for relative override and absolute override:
+
+* **Relative override**: Instead of default, it will use -> *https://yoursite.com/api/v1/selfkey/repository/templates*
+
+`{ "endpoints" : "/templates": "/repository/templates" }`
+
+* **Absolute override**: Instead of default, it will use -> *https://api.yoursite.com/repository/templates*
+
+`{ "endpoints" : "/templates": "https://api.yoursite.com/repository/templates" }`
+
+
+### Complete List Of Possible endpoints
+
+* '/auth/challenge' (COMMON)
+* '/auth/token' (COMMON)
+* '/users' (LWS and possibly marketplace – TBD by product)
+* '/templates' (Marketplace)
+* '/templates/:id' (Marketplace)
+* '/applications' (Marketplace)
+* '/applications/:id' (Marketplace)
+* '/applications/:id/payments' (Marketplace)
+* '/applications' (Marketplace)
+* '/applications/:id' (Marketplace)
+* '/files' (Marketplace, and a similar endpoint will be speced out for LWS)
+* '/login'
+
+### Parameterized Endpoints:
+* Some endpoints like *'/templates/:id'* will contain resource ID as part of the URL
+* The SelfKey Identity Wallet will replace *":id "* for actual resource ID on communication.
+
+
+### Meta
+* This config option is not used by the SelfKey Identity Wallet.
+* It is an object that will be passed to relying party on certain endpoint requests as is.
+* Currently it is used by the SelfKey Extension for a user creation endpoint – TBD if it should be passed on other ones
+* Example: `{meta: { applicationId: '333444' }}`
+
+
+## 2: SelfKey Extension Configuration
+
+
+
+The configuration object is passed differently between different client lib implementations (for different frameworks).
+Please consult with Selfkey Client Lib for specifics.
+
+**ui**
+
+This option is used to define how Selfkey Client Lib interacts with your website. Currently only one option is available inside it: **el**. We hope to extend our library and provide more UI customization options like theme and CSS overrides in the future..
+
+**el**
+
+* Can be one of the following: DOM element, css query selector, or an array containing a mixture of the previous two.
+* The current behavior of the selfkey-client-lib is to use them as containers for the SelfKey Extension login button
+* Example: `{ui: {el: '.lwsClient'}}`
+
+
+
+####
+
+```shell
+{
+   website: {
+       name: 'LWS Example Site',
+       url: 'https://yoursite.com/',
+       termsUrl: 'https://yoursite/terms.html',
+       policyUrl: 'https://yoursite.com/policy.html',
+   },
+}
+```
+```javascript
+
+{
+   website: {
+       name: 'LWS Example Site',
+       url: 'https://yoursite.com/',
+       termsUrl: 'https://yoursite/terms.html',
+       policyUrl: 'https://yoursite.com/policy.html',
+   },
+}
+```
+**website**
+
+* Information about the website integrating LWS.
+* This information is displayed for the user on the extension popup.
+* **name**: Name of the website
+* **url**: Canonical url for the website
+* **termsUrl**: a link to service terms of service
+* **policyUrl**: a link to service privacy policy
+
+
+
+### attributes
+
+```Shell
+attributes: [
+           {
+               id: "first_name",
+               label: "First Name",
+               schemaId: "http://platform.selfkey.org/schema/attribute/first-name.json"
+           },
+           {
+               label: "Last Name",
+               attribute: "http://platform.selfkey.org/schema/attribute/last-name.json"
+           },
+           {
+               id: "email",
+               schemaId: "http://platform.selfkey.org/schema/attribute/email.json"
+           },
+           "http://platform.selfkey.org/schema/attribute/email.json"
+],
+```
+
+
+
+
+* A list of attributes that are required for signup with the service.
+* Each attribute can contains the following information:
+
+* **schemaId**: A url to id attribute in https://platform.selfkey.org/repository.json and possibly other repositories in future. (required)
+* **id**: an unique identifier for a field on relying party server (optional)
+* **label**: a label for this attribute to be displayed for the user (optional, if not provided, we will use the title attribute of schema)
+* Alternatively an attribute can be a simple string which representing schemaId
+* NOTE: Current implementation is not updated with this config options, tracked in issue https://github.com/SelfKeyFoundation/Identity-Wallet/issues/1001
+
+
+
+
+### onAuthCallback
+
+
+
+* An optional callback that can be passed to configuration object.
+* If it is passed, client-lib will call it instead of performing the default login behavior (calling login endpoint and redirecting to provided URL).
+* It will be called on each login/signup attempt.
+
+**Arguments**:
+
+* error: Will contain error object if auth/signup failed. Will be null on successful authentication.
+* response: Will contain response object. Not modified, as returned from /auth/token endpoint.
+* ui: Will contain a reference to selfkey ui elements. Will allow to insert custom html and hide popup if necessary.
+* NOTE: needs to be examined from security perspective, but probably safe to use.
+
+`onAuthResponse: function(err, res, ui) {
+                console.log('OnAuthResponse', err, res, ui);
+                if (err) {
+                    document.getElementById(
+                        'user-token'
+                    ).innerHTML = `UserPayload Error: ${JSON.stringify(err)}`;
+                } else {
+                    document.getElementById(
+                        'user-token'
+                    ).innerHTML = `UserPayload: ${JSON.stringify(res)}`;
+                }
+
+
+                if (!ui) return;
+                setTimeout(() => {
+                    ui.popup.content.innerHTML = '<b>Closing popup</b>';
+                }, 1000);
+                setTimeout(() => {
+                    ui.popup.hide();
+                }, 3000);
+            }`
+
+
+### extensionId
+
+* It is an internal parameter, should not be documented for the public.
+* It is used to specify SelfKey Extension id that is loaded in the browser and is used by selfkey-lib to communicate with the extension, used for development purposes.
+
+
+
+
+### Complete SelfKey Extension Configuration Example
+
+`{
+            ui: {
+                el: '.lwsClient'
+            },
+            website: {
+                name: 'LWS Example',
+                url: 'http://localhost:3030/',
+                termsUrl: 'http://localhost:3030/terms.html',
+                policyUrl: 'http://localhost:3030/policy.html'
+            },
+            rootEndpoint: '/api/v1/selfkey',
+            attributes: [
+                {
+                    id: 'first_name',
+                    label: 'First Name',
+                    schemaId: 'http://platform.selfkey.org/schema/attribute/first-name.json'
+                },
+                {
+                    id: 'last_name',
+                    label: 'Last Name',
+                    schemaId: 'http://platform.selfkey.org/schema/attribute/last-name.json'
+                },
+                {
+                    id: 'email',
+                    label: 'Email',
+                    schemaId: 'http://platform.selfkey.org/schema/attribute/email.json'
+                }
+            ],
+            onAuthResponse: function(err, res, ui) {
+                console.log('OnAuthResponse', err, res, ui);
+                if (err) {
+                    document.getElementById(
+                        'user-token'
+                    ).innerHTML = `UserPayload Error: ${JSON.stringify(err)}`;
+                } else {
+                    document.getElementById(
+                        'user-token'
+                    ).innerHTML = `UserPayload: ${JSON.stringify(res)}`;
+                }
+
+
+                if (!ui) return;
+                setTimeout(() => {
+                    ui.popup.content.innerHTML = '<b>Closing popup</b>';
+                }, 1000);
+                setTimeout(() => {
+                    ui.popup.hide();
+                }, 3000);
+            }
+ }`
+
+
+
+## 3: SelfKey Marketplace Configuration
+
+There are no special configuration options are available for the SelfKey Marketplace at this point.
+
+
+### Complete SelfKey Marketplace Configuration Example:
+
+* This is a simple integration that will only contain the root endpoint.
+* If you are using our compliance solution KYC-Chain, integrations will also contain an override for the template endpoints:
+
+`{
+        rootEndpoint: "https://kyc-instance-url.com/api/v1/",
+        endpoints: {
+            '/templates/:id': `https://kyc-instance-url.com/api/v1/templates/:id?format=minimum`
+        }
+}`
+
+
 
 # REST API Spec
 
@@ -1365,12 +1646,470 @@ Example:
 
 
 
-# Library
+# SelfKey Client library
+
+* SelfKey Client Lib is a client library used to integrate our Chrome browser plugin SelfKey Extension to your website.
+* We have four sample client integrations with Javascript, Angular 1, React, and Vue.
+* Repository: https://github.com/SelfKeyFoundation/selfkey-js-client
+* NOTE: All npm repos should be grouped under `@seflkey` organization prefix
+
+
+
+## Overview
+
+## 1. Javacript Client
+
+* URL: https://www.npmjs.com/package/lws-js-client
+
+
+**Sample Integration**:
+
+* https://github.com/SelfKeyFoundation/selfkey-js-client/tree/master/packages/js/example
+* NOTE: This is a sample integration, the API may be further updated since then.
+
+**Usage**:
+
+* NPM with webpack or similar tools
+
+**Install With NPM**
+
+`npm install lws-js-client --save`
+
+**Usage in Code**
+
+`import lws from 'lws-js-client'
+lws.init(config);`
+
+
+**CDN**
+
+* We use https://unpkg.com/ as our CDN provider
+* Include the following script in your webpage:
+
+**Include Tag In Page**
+
+`<script src="https://unpkg.com/lws-js-client@1.0.0-beta.26/dist/lws.min.js"></script>`
+
+
+Unpkg works directly with npm, and you can include any file in the repository, the structure of the link is:
+
+`https://unpkg.com/<REPOSITORY_NAME>@<PACKAGE_VERSION>/<FILE_PATH>`
+
+**Usage In Code**
+
+`lws.init(config);`
+
+
+**API Reference**:
+
+Init
+
+* The init method should be called when you want to display the LWS button (the most common use case is to do it on page load).
+* The init method can be applied for to setup multiple buttons on the page, an array of container elements or a query selector should be provided for that.
+* The init method can be called only once. If you need to change your setup, you need to call lws.teardown() first, then you can call it again.
+
+`lws.init(config)`
+
+Arguments:
+
+* config – LWS process configuration as explained in Relying Party Configuration.
+
+Prerequisites:
+
+* DOM should be loaded
+* Integrator should know query selector, or provide a DOM element to serve as container for LWS button
+
+
+Init Example:
+
+####
+`lws.init({
+            ui: {
+                el: '.lwsClient'
+            },
+            website: {
+                name: 'LWS Example',
+                url: 'http://localhost:3030/',
+                termsUrl: 'http://localhost:3030/terms.html',
+                policyUrl: 'http://localhost:3030/policy.html'
+            },
+            rootEndpoint: '/api/v1/selfkey',
+            attributes: [
+                {
+                    id: 'first_name',
+                    label: 'First Name',
+                    schemaId: 'http://platform.selfkey.org/schema/attribute/first-name.json'
+                },
+                {
+                    id: 'last_name',
+                    label: 'Last Name',
+                    schemaId: 'http://platform.selfkey.org/schema/attribute/last-name.json'
+                },
+                {
+                    id: 'national_id',
+                    label: 'National ID',
+                    schemaId: 'http://platform.selfkey.org/schema/attribute/national-id.json'
+                }
+           ]
+});`
+
+**teardown**
+
+An opposite method to *init*, will destroy all that *init* have setup.
+
+* This method is useful when you want to change the config provided to init. You would call teardown and then init with new config
+* In web app when navigation happens in javascript, this method should be called for clean up
+
+**Usage in Code**
+
+`lws.teardown();`
+
+## 2. Angular 1 Client
+
+* URL: https://www.npmjs.com/package/lws-angularjs-client
+
+Sample Integration:
+
+* https://github.com/SelfKeyFoundation/selfkey-js-client/tree/master/packages/angularjs/example
+* NOTE: This is a sample integration, the API may be further updated since then.
+
+**Usage**
+
+NPM with webpack or similar tools
+
+**Install With NPM**
+
+`npm install lws-angularjs-client --save`
+
+**Usage in Code**
+
+####
+
+```Shell
+require('lws-angularjs-client');
+
+angular.module('lwsExample', ['lwsSdk'])
+            .controller('login', ['$scope', ($scope) => {
+                $scope.website = {
+                    name: 'LWS Example',
+                    url: 'http://localhost:3031/',
+                    termsUrl: 'http://localhost:3031/terms.html',
+                    policyUrl: 'http://localhost:3031/policy.html',
+                };
+                $scope.rootEndpoint = 'http://localhost:3030/api/v1/selfkey',
+                $scope.attributes = [
+                    {
+                        id: "first_name",
+                        label: "First Name",
+                        schemaId: "http://platform.selfkey.org/schema/attribute/first-name.json"
+                    },
+                    {
+                        id: "last_name",
+                        label: "Last Name",
+                        schemaId: "http://platform.selfkey.org/schema/attribute/last-name.json"
+                    },
+                    {
+                        id: "email",
+                        label: "Email"
+                        schemaId: "http://platform.selfkey.org/schema/attribute/email.json"
+                    }
+                ];
+                $scope.onAuthResponse = (err, res, ui) => {
+                    console.log('OnAuthResponse', err, res, ui);
+                }
+            }]);
+```
+
+**Usage In Code**:
+
+`<lws-button website="website" attributes="attributes" root-endpoint="rootEndpoint" on-auth-response="onAuthResponse(err,res,ui)"></lws-button>`
+
+
+**CDN**
+
+Include the following script on your webpage:
+
+`<script src="http://unpkg.com/angular@1.6.10/angular.min.js"></script>
+<script src="https://unpkg.com/lws-angularjs-client@1.0.0-beta.26/dist/lws-angularjs-client.min.js"></script>`
+
+
+**Usage In Code**:
+
+```Shell
+
+<div ng-controller="login">
+        <lws-button website="website" attributes="attributes" root-endpoint="rootEndpoint" on-auth-response="onAuthResponse(err,res,ui)"></lws-button>
+</div>
+
+
+<script type="text/javascript>
+
+
+angular.module('lwsExample', ['lwsSdk'])
+            .controller('login', ['$scope', ($scope) => {
+                $scope.website = {
+                    name: 'LWS Example',
+                    url: 'http://localhost:3031/',
+                    termsUrl: 'http://localhost:3031/terms.html',
+                    policyUrl: 'http://localhost:3031/policy.html',
+                };
+                $scope.rootEndpoint = 'http://localhost:3030/api/v1/selfkey',
+                $scope.attributes = [
+                    {
+                        id: "first_name",
+                        label: "First Name",
+                        schemaId: "http://platform.selfkey.org/schema/attribute/first-name.json"
+                    },
+                    {
+                        id: "last_name",
+                        label: "Last Name",
+                        schemaId: "http://platform.selfkey.org/schema/attribute/last-name.json"
+                    },
+                    {
+                        id: "email",
+                        label: "Email"
+                        schemaId: "http://platform.selfkey.org/schema/attribute/email.json"
+                    }
+                ];
+                $scope.onAuthResponse = (err, res, ui) => {
+                    console.log('OnAuthResponse', err, res, ui);
+                }
+            }]);
+
+
+</script>
+
+
+```
+
+
+
+
+
+
+## 3. React Client
+
+URL: https://www.npmjs.com/package/lws-react-client
+
+### Sample Integration
+
+* https://github.com/SelfKeyFoundation/selfkey-js-client/tree/master/packages/react/example
+* NOTE: This is a sample integration, the API may be further updated since then.
+
+**Usage**
+
+NPM with webpack or similar tools
+
+**Install With NPM**
+
+`npm install lws-react-client --save`
+
+**Usage in Code**
+
+`import { LWSButton } from 'lws-react-client';
+
+
+const config = {
+    website: {
+        name: 'LWS Example',
+        url: 'http://localhost:3032/',
+        termsUrl: 'http://localhost:3030/terms.html',
+        policyUrl: 'http://localhost:3030/policy.html'
+    },
+    rootEndpoint: 'http://localhost:3030/api/v1/selfkey',
+    attributes: [
+        {
+            id: 'first_name',
+            label: 'First Name',
+            schemaId: 'http://platform.selfkey.org/schema/attribute/first-name.json'
+        },
+        {
+            id: 'last_name',
+            label: 'Last Name',
+            schemaId: 'http://platform.selfkey.org/schema/attribute/last-name.json'
+        },
+        {
+            id: 'email',
+            label: 'Email',
+            schemaId: 'http://platform.selfkey.org/schema/attribute/email.json'
+        }
+    ]
+};
+ReactDOM.render((<LWSButton />), document.getElementById('root'))`
+
+
+**CDN**
+
+Include the following script in your webpage:
+
+`<script src="http://unpkg.com/react@16.5.0/umd/react.production.min.js"></script>
+<script src="http://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/lws-react-client@1.0.0-beta.26/dist/lws-react-client.min.js"></script>`
+
+
+**Usage in Code**
+
+####
+
+```shell
+
+<div ng-controller="login">
+        <lws-button website="website" attributes="attributes" root-endpoint="rootEndpoint" on-auth-response="onAuthResponse(err,res,ui)"></lws-button>
+</div>
+
+
+<script>
+            ReactDOM.render(
+                React.createElement(lwsReact.LWSButton, {
+                    website: {
+                        name: 'LWS Example',
+                        url: 'http://localhost:3032/',
+                        termsUrl: 'http://localhost:3030/terms.html',
+                        policyUrl: 'http://localhost:3030/policy.html'
+                    },
+                    rootEndpoint: 'http://localhost:3030/api/v1/selfkey',
+                    attributes: [
+                        {
+                            id: 'first_name',
+                            label: 'First Name',
+                            attribute:
+                                'http://platform.selfkey.org/schema/attribute/first-name.json'
+                        },
+                        {
+                            id: 'last_name',
+                            label: 'Last Name',
+                            attribute: 'http://platform.selfkey.org/schema/attribute/last-name.json'
+                        },
+                        {
+                            id: 'email',
+                            label: 'Email',
+                            schemaId: 'http://platform.selfkey.org/schema/attribute/email.json'
+                        }
+                    ]
+                }),
+                document.getElementById('root')
+            );
+ </script>
+
+```
+
+
+
+
+
+## 4. Vue Client
+
+URL: https://www.npmjs.com/package/lws-vue-client
+
+### Sample Integration
+
+* https://github.com/SelfKeyFoundation/selfkey-js-client/tree/master/packages/vue/example
+* NOTE: This is a sample integration, the API may be further updated since then.
+
+**Usage**
+NPM with webpack or similar tools
+
+**Install With NPM**
+
+`npm install lws-vue-client --save`
+
+**Usage in Code**
+
+```vue
+
+require('lws-veu-client');
+
+new Vue({
+            el: '#root',
+            data: {
+                website: {
+                    name: 'LWS Example',
+                    url: 'http://localhost:3033/',
+                    termsUrl: 'http://localhost:3030/terms.html',
+                    policyUrl: 'http://localhost:3030/policy.html'
+                },
+                rootEndpoint: 'http://localhost:3030/api/v1/selfkey',
+                attributes: [
+                    {
+                        id: "first_name",
+                        label: "First Name",
+                        schemaId: "http://platform.selfkey.org/schema/attribute/first-name.json"
+                    },
+                    {
+                        id: "last_name",
+                        label: "Last Name",
+                        attribute: "http://platform.selfkey.org/schema/attribute/last-name.json"
+                    }
+                ],
+            }
+        });
+
+```
+
+**Usage in Code**
+
+`<lws-button v-bind:website="website" v-bind:attributes="attributes" v-bind:root-endpoint="rootEndpoint"></lws-button>`
+
+
+**CDN**
+
+Include the following script in your webpage:
+
+**Include Tag in Page**
+
+`<script src="http://unpkg.com/vue@2.5.17/dist/vue.js"></script>
+<script src="https://unpkg.com/lws-vue-client@1.0.0-beta.26/dist/lws-vue-client.min.js"></script>`
+
+**Usage in Code**
+
+####
+
+```vue
+
+<div id="root">
+   <lws-button v-bind:website="website" v-bind:attributes="attributes" v-bind:root-endpoint="rootEndpoint"></lws-button>
+</div>
+
+<script type="text/javascript>
+
+new Vue({
+            el: '#root',
+            data: {
+                website: {
+                    name: 'LWS Example',
+                    url: 'http://localhost:3033/',
+                    termsUrl: 'http://localhost:3030/terms.html',
+                    policyUrl: 'http://localhost:3030/policy.html'
+                },
+                rootEndpoint: 'http://localhost:3030/api/v1/selfkey',
+                attributes: [
+                    {
+                        id: "first_name",
+                        label: "First Name",
+                        schemaId: "http://platform.selfkey.org/schema/attribute/first-name.json"
+                    },
+                    {
+                        id: "last_name",
+                        label: "Last Name",
+                        attribute: "http://platform.selfkey.org/schema/attribute/last-name.json"
+                    }
+                ],
+            }
+        });
+
+</script>
+
+```
+
 
 ## Node.JS
 
+TBD by SelfKey Team  
+
 ## ASP.NET
+
+TBD by SelfKey Team  
 
 ## SelfKey Service
 
-# Simple Relying Party Integration Example
+TBD by SelfKey Team  
