@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>SelfKey API Documents</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;javascript&quot;,&quot;shell&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -211,10 +211,8 @@
     <div class="toc-wrapper">
       <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
               <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="shell">shell</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -225,19 +223,119 @@
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
           </li>
           <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
-          </li>
-          <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#a-selfkey-extension" class="toc-h1 toc-link" data-title="A. SelfKey Extension">A. SelfKey Extension</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                    <a href="#overview" class="toc-h2 toc-link" data-title="Overview">Overview</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
+                    <a href="#part-1-user-requirements" class="toc-h2 toc-link" data-title="Part 1: User Requirements">Part 1: User Requirements</a>
                   </li>
                   <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#part-2-frontend-integration" class="toc-h2 toc-link" data-title="Part 2: Frontend Integration">Part 2: Frontend Integration</a>
+                  </li>
+                  <li>
+                    <a href="#part-3-backend-integration" class="toc-h2 toc-link" data-title="Part 3: Backend Integration">Part 3: Backend Integration</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#b-selfkey-marketplace" class="toc-h1 toc-link" data-title="B. SelfKey Marketplace">B. SelfKey Marketplace</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#1-crypto-exchanges" class="toc-h2 toc-link" data-title="1: Crypto Exchanges">1: Crypto Exchanges</a>
+                  </li>
+                  <li>
+                    <a href="#2-incorporations" class="toc-h2 toc-link" data-title="2: Incorporations">2: Incorporations</a>
+                  </li>
+                  <li>
+                    <a href="#3-bank-accounts" class="toc-h2 toc-link" data-title="3: Bank Accounts">3: Bank Accounts</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#c-authentication" class="toc-h1 toc-link" data-title="C. Authentication">C. Authentication</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#overview-2" class="toc-h2 toc-link" data-title="Overview">Overview</a>
+                  </li>
+                  <li>
+                    <a href="#part-1-challenge-response-protocol" class="toc-h2 toc-link" data-title="Part 1: Challenge-Response Protocol">Part 1: Challenge-Response Protocol</a>
+                  </li>
+                  <li>
+                    <a href="#part-2-jwt-json-web-token" class="toc-h2 toc-link" data-title="Part 2: JWT-JSON Web token">Part 2: JWT-JSON Web token</a>
+                  </li>
+                  <li>
+                    <a href="#part-3-challenge-token" class="toc-h2 toc-link" data-title="Part 3: Challenge Token">Part 3: Challenge Token</a>
+                  </li>
+                  <li>
+                    <a href="#part-4-wallet-token" class="toc-h2 toc-link" data-title="Part 4: Wallet Token">Part 4: Wallet Token</a>
+                  </li>
+                  <li>
+                    <a href="#part-5-how-to-verify-wallet-token-on-other-servers" class="toc-h2 toc-link" data-title="Part 5: How To Verify Wallet Token On Other Servers">Part 5: How To Verify Wallet Token On Other Servers</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#d-configuring-your-website" class="toc-h1 toc-link" data-title="D. Configuring Your Website">D. Configuring Your Website</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#overview-3" class="toc-h2 toc-link" data-title="Overview">Overview</a>
+                  </li>
+                  <li>
+                    <a href="#1-common-configuration-properties" class="toc-h2 toc-link" data-title="1: Common Configuration Properties">1: Common Configuration Properties</a>
+                  </li>
+                  <li>
+                    <a href="#2-selfkey-extension-configuration" class="toc-h2 toc-link" data-title="2: SelfKey Extension Configuration">2: SelfKey Extension Configuration</a>
+                  </li>
+                  <li>
+                    <a href="#3-selfkey-marketplace-configuration" class="toc-h2 toc-link" data-title="3: SelfKey Marketplace Configuration">3: SelfKey Marketplace Configuration</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#e-rest-api-spec" class="toc-h1 toc-link" data-title="E. REST API Spec">E. REST API Spec</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#overview-4" class="toc-h2 toc-link" data-title="Overview">Overview</a>
+                  </li>
+                  <li>
+                    <a href="#headers-sent-by-selfkey-identity-wallet" class="toc-h2 toc-link" data-title="Headers Sent By SelfKey Identity wallet">Headers Sent By SelfKey Identity wallet</a>
+                  </li>
+                  <li>
+                    <a href="#1-authentication" class="toc-h2 toc-link" data-title="1: Authentication">1: Authentication</a>
+                  </li>
+                  <li>
+                    <a href="#2-selfkey-extension" class="toc-h2 toc-link" data-title="2: SelfKey Extension">2: SelfKey Extension</a>
+                  </li>
+                  <li>
+                    <a href="#3-kyc-selfkey-marketplace" class="toc-h2 toc-link" data-title="3: KYC (SelfKey Marketplace)">3: KYC (SelfKey Marketplace)</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#f-selfkey-client-lib" class="toc-h1 toc-link" data-title="F. SelfKey Client Lib">F. SelfKey Client Lib</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#1-javacript-client" class="toc-h2 toc-link" data-title="1. Javacript Client">1. Javacript Client</a>
+                  </li>
+                  <li>
+                    <a href="#2-angular-1-client" class="toc-h2 toc-link" data-title="2. Angular 1 Client">2. Angular 1 Client</a>
+                  </li>
+                  <li>
+                    <a href="#3-react-client" class="toc-h2 toc-link" data-title="3. React Client">3. React Client</a>
+                  </li>
+                  <li>
+                    <a href="#4-vue-client" class="toc-h2 toc-link" data-title="4. Vue Client">4. Vue Client</a>
+                  </li>
+                  <li>
+                    <a href="#node-js" class="toc-h2 toc-link" data-title="Node.JS">Node.JS</a>
+                  </li>
+                  <li>
+                    <a href="#asp-net" class="toc-h2 toc-link" data-title="ASP.NET">ASP.NET</a>
+                  </li>
+                  <li>
+                    <a href="#selfkey-service" class="toc-h2 toc-link" data-title="SelfKey Service">SelfKey Service</a>
                   </li>
               </ul>
           </li>
@@ -246,198 +344,1829 @@
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+            <li><a href='https://www.selfkey.org/download'>Download - SelfKey Identity Wallet</a></li>
+            <li><a href='https://github.com/lord/slate'>Download - SelfKey Extension</a></li>
+            <li><br></li>
+            <li><a href='mailto:help@selfkey.org'>help@selfkey.org</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+<p><strong>Welcome to the SelfKey API</strong></p>
 
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<p>The SelfKey ecosystem is broken down into three main parts. First is the SelfKey Identity Wallet, a desktop Ethereum wallet on Mac OS, Windows, and Linux. Second is the SelfKey Extension, a Chrome browser plugin that allows a user to authenticate with websites using their Decentralized Identifier (DID). Third is the SelfKey Marketplace, where users can register for financial products and services with one click.</p>
 
-<p>This example API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
-<h1 id='authentication'>Authentication</h1>
-<blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<p>There are six sections to this document:</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
-</blockquote>
-
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
+<ol>
+<li><strong>SelfKey Extension</strong>: How to integrate our Chrome plugin with your website.</li>
+<li><strong>SelfKey Marketplace</strong>: How to integrate your backend and onboard new users with our marketplace.</li>
+<li><strong>Authentication</strong>: How to prove users have ownership over a Decentralized Identifier (DID).</li>
+<li><strong>Configuring Your Website</strong>: Both frontend, backend, and our API endpoints.</li>
+<li><strong>REST API Spec</strong>:</li>
+<li><strong>Client Library</strong>:</li>
+</ol>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+Our compliance solution <a href ="https://www.kyc-chain.com">KYC-Chain</a> has every integration above built in by default.
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<p><strong>How To Use This Document</strong></p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
+<p>You can use our API to access endpoints in the SelfKey Identity Wallet desktop application and the SelfKey Extension browser plugin. If anything is unclear, please contact us at <a href="mailto:help@selfkey.org">help@selfkey.org</a> and we can help you with the integrations. The format of this document is broken down into three panels:</p>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
+<ul>
+<li><strong>Left Panel</strong>: Table of Contents &amp; Search Bar</li>
+<li><strong>Middle Panel</strong>: Information &amp; Documentation</li>
+<li><strong>Right Panel</strong>: Code Samples by Language</li>
+</ul>
+<h1 id='a-selfkey-extension'>A. SelfKey Extension</h1><h2 id='overview'>Overview</h2>
+<p>By installing the SelfKey Extension browser plugin, a user can deploy their Decentralized Identifier (DID) for authentication with your website. The SelfKey Identity Wallet (Mac OS/Win/Linux) acts as the backend layer that connects to the Ethereum blockchain.</p>
+<h2 id='part-1-user-requirements'>Part 1: User Requirements</h2>
+<p>For a user to successfully use their Decentralized Identifier (DID) as an authentication method, there are two applications that must be installed and activated by the user.</p>
+
+<ul>
+<li>Step 1: <a href="https://selfkey.org/download/">SelfKey Identity Wallet</a> must be installed, opened, and logged in.</li>
+<li>Step 2: [Selfkey Extension] browser plugin must be installed and activated.</li>
+</ul>
 
 <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+Note: If both are not installed, there will be instructions after clicking "Login with SelfKey" on your website.
 </aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h2 id='part-2-frontend-integration'>Part 2: Frontend Integration</h2>
+<p>To enable the SelfKey Extension as an authentication method for your website, a JavaScript library needs to be installed. This displays a &quot;Login With SelfKey&quot; button on your website for users to click. Clicking this button starts the login workflow.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
-</tr>
-</tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -X DELETE
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
-</tr>
-</tbody></table>
-<h1 id='errors'>Errors</h1>
+<p>Exact instructions can be found in <a href="#f-client-library">Selfkey Client Lib</a> and <a href="#d-configuring-your-website">configuring your website</a>.</p>
+<h3 id='installation-instructions'>Installation Instructions:</h3>
+<ol>
+<li>Integrate <a href="#f-client-library"><em>Selfkey Client Lib</em></a> into your website.</li>
+<li>Select where you want the <em>&quot;Login With SelfKey&quot;</em> button to appear.</li>
+<li>Initialize the <em>&quot;Login With SelfKey&quot;</em> button by passing <a href="#d-configuring-your-website">SelfKey Extension Config</a> to <a href="#f-client-library">Selfkey Client Library</a>.</li>
+</ol>
+<h2 id='part-3-backend-integration'>Part 3: Backend Integration</h2>
 <aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
+Question: Are you using <a href ="https://www.kyc-chain.com">KYC-Chain</a> or an in-house compliance tool for verifying identities of new users?
 </aside>
 
-<p>The Kittn API uses the following error codes:</p>
+<p>We have two options for the SelfKey Extension backend integration.</p>
+<h3 id='option-1-for-non-kyc-chain-clients'>Option 1: For Non KYC-Chain Clients</h3>
+<p>The following endpoint should be implemented on your backend: <a href="#c-authentication">Authentication</a></p>
+
+<ul>
+<li><strong>Authentication</strong> – Challenge</li>
+<li><strong>Authentication</strong> – Challenge Reply</li>
+<li><strong>LWS</strong> - Create User file</li>
+<li><strong>LWS</strong> - Get user token</li>
+<li><strong>LWS</strong> - Login endpoint (optional if onAuthCallback is implemented)</li>
+</ul>
+
+<p>Currently we don&#39;t to have tools to make this process easier, but there are several options coming soon:</p>
+
+<ul>
+<li><strong>[Selfkey Node.js lib]</strong> - WORK IN PROGRESS</li>
+<li><strong>[Selfkey ASP.NET lib]</strong> - WORK IN PROGRESS</li>
+<li><strong>[Selfkey Service]</strong> - WORK IN PROGRESS</li>
+</ul>
+<h3 id='option-2-for-kyc-chain-clients'>Option 2: For KYC-Chain Clients</h3>
+<p>If your website is integrated with KYC-Chain, you can leverage our existing <a href="#c-authentication">Authentication</a> endpoints:</p>
+
+<ol>
+<li>KYC Chain should configure your instance to use RSA algorithm for token signatures.</li>
+<li>You should receive a RSA public key and configure it for token verification.</li>
+<li>You should override authentication endpoints in their config to point to KYC-Chain.</li>
+</ol>
+<h1 id='b-selfkey-marketplace'>B. SelfKey Marketplace</h1><h2 id='1-crypto-exchanges'>1: Crypto Exchanges</h2>
+<aside class="notice">
+Currently, integration for the SelfKey Marketplace is only available for crypto exchange clients that use KYC-Chain, our in-house compliance tool that helps with KYC onboarding of new users.
+</aside>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+        <span class="s2">"rootEndpoint"</span>: INSTANCE_URL,
+        <span class="s2">"endpoints"</span>: <span class="o">{</span>
+            <span class="s2">"/templates/:id"</span>: <span class="s2">"INSTANCE_URL/templates/:id?format=minimum"</span>
+            <span class="s2">"/user/token"</span>: <span class="s2">"INSTANCE_URL/auth/token"</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code>
+<span class="p">{</span>
+        <span class="s2">"rootEndpoint"</span><span class="p">:</span> <span class="nx">INSTANCE_URL</span><span class="p">,</span>
+        <span class="s2">"endpoints"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"/templates/:id"</span><span class="p">:</span> <span class="s2">"INSTANCE_URL/templates/:id?format=minimum"</span>
+            <span class="s2">"/user/token"</span><span class="p">:</span> <span class="s2">"INSTANCE_URL/auth/token"</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre><h3 id='how-to-integrate-a-new-exchange-kyc-chain-clients'>How To Integrate A New Exchange (KYC-Chain Clients)</h3>
+<p>Integration with crypto exchanges that use <a href="https://www.kyc-chain.com">KYC-Chain</a> for compliance is far more seamless because there is a default integration built in with SelfKey. The configuration for them will usually look like this to the right:</p>
+<h3 id='how-to-integrate-a-new-exchange-non-kyc-chain-clients'>How To Integrate A New Exchange (Non-KYC-Chain Clients)</h3>
+<p>Not currently available. Will update API Documentation when tools are ready for non-clients.</p>
+<h2 id='2-incorporations'>2: Incorporations</h2>
+<aside class="warning">More documentation coming soon.</aside>
+<h2 id='3-bank-accounts'>3: Bank Accounts</h2>
+<aside class="warning">More documentation coming soon.</aside>
+<h1 id='c-authentication'>C. Authentication</h1><h2 id='overview-2'>Overview</h2>
+<p>The purpose of this function is to prove the user has ownership over a Decentralized Identifier (DID) presented for authentication. To do this, we issue a <strong>&quot;Challenge-Response&quot;</strong> protocol to cryptographically prove ownership via private key. For Details about API endpoints, please consult: <a href="#e-rest-api-spec">REST API Spec</a>.</p>
+
+<aside class="notice">Note: All communications MUST be done via secure SSL connection.</aside>
+<h2 id='part-1-challenge-response-protocol'>Part 1: Challenge-Response Protocol</h2>
+<ol>
+<li>The SelfKey Identity Wallet requests a unique nonce from the your website and sends the Ethereum public key.</li>
+<li>Your website responds with a Challenge JWT Token containing the public key in subject and nonce claim.</li>
+<li>The wallet receives the Challenge Token, decodes it and extracts the nonce.</li>
+<li>The wallet creates a signature of the nonce signed with it&#39;s private key.</li>
+<li>The wallet replies to your website with the challenge JWT token and signature.</li>
+<li>Your website verifies that signature corresponds to the public key and nonce inside the JWT challenge token.</li>
+<li>Your website replies to the wallet by issuing a Wallet JWT token.</li>
+<li>The SelfKey Identity Wallet uses the &quot;Wallet JWT Token&quot; to perform other requests to your website.</li>
+</ol>
+<h2 id='part-2-jwt-json-web-token'>Part 2: JWT-JSON Web token</h2>
+<p>How To Implement JWT Tokens:</p>
+
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/JSON_Web_Token">JSON Web Token: Wikipedia</a></li>
+<li><a href="https://jwt.io/">JWT.io</a></li>
+<li><a href="https://auth0.com/resources/ebooks/jwt-handbook">JWT Handbook</a></li>
+<li><a href="https://auth0.com/docs/jwt">Auth0 JWT Docs</a></li>
+</ul>
+<h3 id='allowed-algorithms'>Allowed Algorithms</h3>
+<ul>
+<li><strong>HMAC</strong> - Default</li>
+<li><strong>RSA</strong> - Suitable for multi server authentication (STILL IN DEVELOPMENT)</li>
+</ul>
+<h2 id='part-3-challenge-token'>Part 3: Challenge Token</h2>
+<p>Besides several requirements below, you are free to include any data in your token for verification.</p>
+
+<p>Required Claims:</p>
+
+<ul>
+<li><strong>sub</strong>: (Subject) The wallet&#39;s public key</li>
+<li><strong>iat</strong>: (Issued At) the epoch timestamp that the JWT was issued at</li>
+<li><strong>exp</strong>: (Expiration)the epoch timestamp at which the JWT expires</li>
+<li><strong>nonce</strong>: (Number used Once) a random string of bytes (base64-encoded) which must be signed in order to authenticate</li>
+<li><strong>typ</strong>: &quot;IDW_CHALLANGE&quot;</li>
+<li>Recommended token expiration time: 30 min</li>
+</ul>
+<h2 id='part-4-wallet-token'>Part 4: Wallet Token</h2>
+<p>Besides several requirements below, you are free to include any data in your token for verification.</p>
+
+<p>Required Claims:</p>
+
+<ul>
+<li><strong>sub</strong>: (Subject) The wallet&#39;s public key</li>
+<li><strong>iat</strong>: (Issued At) the epoch timestamp that the JWT was issued at</li>
+<li><strong>exp</strong>: (Expiration)the epoch timestamp at which the JWT expires</li>
+<li><strong>typ</strong>: &quot;IDW_ACCESS&quot;</li>
+<li>Recommended token expiration time: 60 min</li>
+</ul>
+<h2 id='part-5-how-to-verify-wallet-token-on-other-servers'>Part 5: How To Verify Wallet Token On Other Servers</h2>
+<ul>
+<li>JWT token can be verified on other servers, not just one.</li>
+<li>This allows our API to reside in several different services, not necessary all endpoints in one.</li>
+<li>For this to work, you must initialize your JWT verification logic with a shared secret key between the servers.</li>
+<li>A better approach would be to use RS256 algorithm, and have your private key be accessible only to the server that hosts the challenge/response endpoint.</li>
+<li>Afterwards, any other server that needs to verify it can use the public key.</li>
+</ul>
+<h1 id='d-configuring-your-website'>D. Configuring Your Website</h1><h2 id='overview-3'>Overview</h2>
+<p>Using the SelfKey Identity Wallet (desktop application) and SelfKey Extension (browser plugin), we can utilize a user&#39;s Decentralized Identifier (DID) for authentication to your website. The configuration object has similar structure for both SelfKey Extension and SelfKey Marketplace integrations, but has several distinctions for each and is usually placed in different places.</p>
+
+<p>The SelfKey Extension configuration object would be usually passed directly when initialized inside selfkey-client-lib. The SelfKey Marketplace integration object will usually be stored in the Selfkey API (Airtable inside <em>relying_party_config field</em>), you will need to submit the configuration (or all relevant details) to us.</p>
+<h2 id='1-common-configuration-properties'>1: Common Configuration Properties</h2>
+<p>There are two main properties that exist between both objects regarding integration endpoints.</p>
+<h3 id='rootendpoint'>rootEndpoint</h3>
+<ul>
+<li>This is the default integration endpoint.</li>
+<li>If no overrides, by default the SelfKey Identity Wallet will try to guess all endpoints by appending their name to it.<br></li>
+<li>If the <em>rootEndpoint</em> provided is not an absolute URL, it will be prepended with website URL (see website config option).</li>
+</ul>
+
+<p><em>Example:</em></p>
+
+<ul>
+<li><strong>rootEndpoint</strong>: &quot;https://yoursite.com/api/v1/selfkey/&quot;</li>
+<li>The SelfKey Identity Wallet will derive auth/challenge endpoint and templates endpoint by simply appending their name to root endpoint:</li>
+<li><strong>Challenge</strong>: https://yoursite.com/api/v1/selfkey/auth/challange</li>
+<li><strong>Templates</strong>: https://yoursite.com/api/v1/selfkey/template</li>
+</ul>
+<h3 id='endpoints'>endpoints</h3>
+<ul>
+<li>The endpoints option contain overrides to the default API endpoint mechanisms.</li>
+<li>Override config supports both absolute URLs and relative URLs.</li>
+<li>Our API is configurable in terms of URLs to the point that different endpoints can run on different services as long as they can use a common [Authentication &amp; Proof Of Ownership Challenge-Response] scheme.</li>
+</ul>
+
+<p><em>Example:</em></p>
+
+<p><strong>rootEndpoint of &quot;https://yoursite.com/api/v1/selfkey/&quot;</strong></p>
+
+<ul>
+<li><p>Default behavior for the template endpoint is to use: https://yoursite.com/api/v1/selfkey/templates endpoint, but there are two options for relative override and absolute override:</p></li>
+<li><p><strong>Relative override</strong>: Instead of default, it will use -&gt; <em>https://yoursite.com/api/v1/selfkey/repository/templates</em></p></li>
+</ul>
+
+<p><code>{ &quot;endpoints&quot; : &quot;/templates&quot;: &quot;/repository/templates&quot; }</code></p>
+
+<ul>
+<li><strong>Absolute override</strong>: Instead of default, it will use -&gt; <em>https://api.yoursite.com/repository/templates</em></li>
+</ul>
+
+<p><code>{ &quot;endpoints&quot; : &quot;/templates&quot;: &quot;https://api.yoursite.com/repository/templates&quot; }</code></p>
+<h3 id='complete-list-of-possible-endpoints'>Complete List Of Possible endpoints</h3>
+<ul>
+<li>&#39;/auth/challenge&#39; (COMMON)</li>
+<li>&#39;/auth/token&#39; (COMMON)</li>
+<li>&#39;/users&#39; (LWS and possibly marketplace – TBD by product)</li>
+<li>&#39;/templates&#39; (Marketplace)</li>
+<li>&#39;/templates/:id&#39; (Marketplace)</li>
+<li>&#39;/applications&#39; (Marketplace)</li>
+<li>&#39;/applications/:id&#39; (Marketplace)</li>
+<li>&#39;/applications/:id/payments&#39; (Marketplace)</li>
+<li>&#39;/applications&#39; (Marketplace)</li>
+<li>&#39;/applications/:id&#39; (Marketplace)</li>
+<li>&#39;/files&#39; (Marketplace, and a similar endpoint will be speced out for LWS)</li>
+<li>&#39;/login&#39;</li>
+</ul>
+<h3 id='parameterized-endpoints'>Parameterized Endpoints:</h3>
+<ul>
+<li>Some endpoints like <em>&#39;/templates/:id&#39;</em> will contain resource ID as part of the URL</li>
+<li>The SelfKey Identity Wallet will replace <em>&quot;:id &quot;</em> for actual resource ID on communication.</li>
+</ul>
+<h3 id='meta'>Meta</h3>
+<ul>
+<li>This config option is not used by the SelfKey Identity Wallet.</li>
+<li>It is an object that will be passed to relying party on certain endpoint requests as is.</li>
+<li>Currently it is used by the SelfKey Extension for a user creation endpoint – TBD if it should be passed on other ones</li>
+<li>Example: <code>{meta: { applicationId: &#39;333444&#39; }}</code></li>
+</ul>
+<h2 id='2-selfkey-extension-configuration'>2: SelfKey Extension Configuration</h2>
+<p>The configuration object is passed differently between different client lib implementations (for different frameworks).
+Please consult with Selfkey Client Lib for specifics.</p>
+
+<p><strong>ui</strong></p>
+
+<p>This option is used to define how Selfkey Client Lib interacts with your website. Currently only one option is available inside it: <strong>el</strong>. We hope to extend our library and provide more UI customization options like theme and CSS overrides in the future..</p>
+
+<p><strong>el</strong></p>
+
+<ul>
+<li>Can be one of the following: DOM element, css query selector, or an array containing a mixture of the previous two.</li>
+<li>The current behavior of the selfkey-client-lib is to use them as containers for the SelfKey Extension login button</li>
+<li>Example: <code>{ui: {el: &#39;.lwsClient&#39;}}</code></li>
+</ul>
+<pre class="highlight shell tab-shell"><code><span class="o">{</span>
+   website: <span class="o">{</span>
+       name: <span class="s1">'LWS Example Site'</span>,
+       url: <span class="s1">'https://yoursite.com/'</span>,
+       termsUrl: <span class="s1">'https://yoursite/terms.html'</span>,
+       policyUrl: <span class="s1">'https://yoursite.com/policy.html'</span>,
+   <span class="o">}</span>,
+<span class="o">}</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code>
+<span class="p">{</span>
+   <span class="nl">website</span><span class="p">:</span> <span class="p">{</span>
+       <span class="nl">name</span><span class="p">:</span> <span class="s1">'LWS Example Site'</span><span class="p">,</span>
+       <span class="nx">url</span><span class="p">:</span> <span class="s1">'https://yoursite.com/'</span><span class="p">,</span>
+       <span class="nx">termsUrl</span><span class="p">:</span> <span class="s1">'https://yoursite/terms.html'</span><span class="p">,</span>
+       <span class="nx">policyUrl</span><span class="p">:</span> <span class="s1">'https://yoursite.com/policy.html'</span><span class="p">,</span>
+   <span class="p">},</span>
+<span class="p">}</span>
+</code></pre>
+<p><strong>website</strong></p>
+
+<ul>
+<li>Information about the website integrating LWS.</li>
+<li>This information is displayed for the user on the extension popup.</li>
+<li><strong>name</strong>: Name of the website</li>
+<li><strong>url</strong>: Canonical url for the website</li>
+<li><strong>termsUrl</strong>: a link to service terms of service</li>
+<li><strong>policyUrl</strong>: a link to service privacy policy</li>
+</ul>
+<h3 id='attributes'>attributes</h3><pre class="highlight plaintext"><code>attributes: [
+           {
+               id: "first_name",
+               label: "First Name",
+               schemaId: "http://platform.selfkey.org/schema/attribute/first-name.json"
+           },
+           {
+               label: "Last Name",
+               attribute: "http://platform.selfkey.org/schema/attribute/last-name.json"
+           },
+           {
+               id: "email",
+               schemaId: "http://platform.selfkey.org/schema/attribute/email.json"
+           },
+           "http://platform.selfkey.org/schema/attribute/email.json"
+],
+</code></pre>
+<ul>
+<li>A list of attributes that are required for signup with the service.</li>
+<li><p>Each attribute can contains the following information:</p></li>
+<li><p><strong>schemaId</strong>: A url to id attribute in https://platform.selfkey.org/repository.json and possibly other repositories in future. (required)</p></li>
+<li><p><strong>id</strong>: an unique identifier for a field on relying party server (optional)</p></li>
+<li><p><strong>label</strong>: a label for this attribute to be displayed for the user (optional, if not provided, we will use the title attribute of schema)</p></li>
+<li><p>Alternatively an attribute can be a simple string which representing schemaId</p></li>
+<li><p>NOTE: Current implementation is not updated with this config options, tracked in issue https://github.com/SelfKeyFoundation/Identity-Wallet/issues/1001</p></li>
+</ul>
+<pre class="highlight javascript tab-javascript"><code><span class="nx">onAuthResponse</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">ui</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'OnAuthResponse'</span><span class="p">,</span> <span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">ui</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span>
+                        <span class="s1">'user-token'</span>
+                    <span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`UserPayload Error: </span><span class="p">${</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">err</span><span class="p">)}</span><span class="s2">`</span><span class="p">;</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span>
+                        <span class="s1">'user-token'</span>
+                    <span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`UserPayload: </span><span class="p">${</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">res</span><span class="p">)}</span><span class="s2">`</span><span class="p">;</span>
+                <span class="p">}</span>
+
+
+                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">ui</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+                <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                    <span class="nx">ui</span><span class="p">.</span><span class="nx">popup</span><span class="p">.</span><span class="nx">content</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">'&lt;b&gt;Closing popup&lt;/b&gt;'</span><span class="p">;</span>
+                <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+                <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                    <span class="nx">ui</span><span class="p">.</span><span class="nx">popup</span><span class="p">.</span><span class="nx">hide</span><span class="p">();</span>
+                <span class="p">},</span> <span class="mi">3000</span><span class="p">);</span>
+            <span class="p">}</span>
+</code></pre><h3 id='onauthcallback'>onAuthCallback</h3>
+<ul>
+<li>An optional callback that can be passed to configuration object.</li>
+<li>If it is passed, client-lib will call it instead of performing the default login behavior (calling login endpoint and redirecting to provided URL).</li>
+<li>It will be called on each login/signup attempt.</li>
+</ul>
+
+<p><strong>Arguments</strong>:</p>
+
+<ul>
+<li>error: Will contain error object if auth/signup failed. Will be null on successful authentication.</li>
+<li>response: Will contain response object. Not modified, as returned from /auth/token endpoint.</li>
+<li>ui: Will contain a reference to selfkey ui elements. Will allow to insert custom html and hide popup if necessary.</li>
+<li>NOTE: needs to be examined from security perspective, but probably safe to use.</li>
+</ul>
+<h3 id='extensionid'>extensionId</h3>
+<ul>
+<li>It is an internal parameter, should not be documented for the public.</li>
+<li>It is used to specify SelfKey Extension id that is loaded in the browser and is used by selfkey-lib to communicate with the extension, used for development purposes.</li>
+</ul>
+<h3 id='complete-selfkey-extension-configuration-example'>Complete SelfKey Extension Configuration Example</h3>
+<blockquote>
+<p>Complete SelfKey Extension Configuration Example</p>
+</blockquote>
+<pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+            <span class="nl">ui</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nl">el</span><span class="p">:</span> <span class="s1">'.lwsClient'</span>
+            <span class="p">},</span>
+            <span class="nx">website</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nl">name</span><span class="p">:</span> <span class="s1">'LWS Example'</span><span class="p">,</span>
+                <span class="nx">url</span><span class="p">:</span> <span class="s1">'http://localhost:3030/'</span><span class="p">,</span>
+                <span class="nx">termsUrl</span><span class="p">:</span> <span class="s1">'http://localhost:3030/terms.html'</span><span class="p">,</span>
+                <span class="nx">policyUrl</span><span class="p">:</span> <span class="s1">'http://localhost:3030/policy.html'</span>
+            <span class="p">},</span>
+            <span class="nx">rootEndpoint</span><span class="p">:</span> <span class="s1">'/api/v1/selfkey'</span><span class="p">,</span>
+            <span class="nx">attributes</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="na">id</span><span class="p">:</span> <span class="s1">'first_name'</span><span class="p">,</span>
+                    <span class="na">label</span><span class="p">:</span> <span class="s1">'First Name'</span><span class="p">,</span>
+                    <span class="na">schemaId</span><span class="p">:</span> <span class="s1">'http://platform.selfkey.org/schema/attribute/first-name.json'</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="na">id</span><span class="p">:</span> <span class="s1">'last_name'</span><span class="p">,</span>
+                    <span class="na">label</span><span class="p">:</span> <span class="s1">'Last Name'</span><span class="p">,</span>
+                    <span class="na">schemaId</span><span class="p">:</span> <span class="s1">'http://platform.selfkey.org/schema/attribute/last-name.json'</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="na">id</span><span class="p">:</span> <span class="s1">'email'</span><span class="p">,</span>
+                    <span class="na">label</span><span class="p">:</span> <span class="s1">'Email'</span><span class="p">,</span>
+                    <span class="na">schemaId</span><span class="p">:</span> <span class="s1">'http://platform.selfkey.org/schema/attribute/email.json'</span>
+                <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="nx">onAuthResponse</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">ui</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'OnAuthResponse'</span><span class="p">,</span> <span class="nx">err</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">ui</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span>
+                        <span class="s1">'user-token'</span>
+                    <span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`UserPayload Error: </span><span class="p">${</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">err</span><span class="p">)}</span><span class="s2">`</span><span class="p">;</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span>
+                        <span class="s1">'user-token'</span>
+                    <span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">`UserPayload: </span><span class="p">${</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">res</span><span class="p">)}</span><span class="s2">`</span><span class="p">;</span>
+                <span class="p">}</span>
+
+
+                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">ui</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+                <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                    <span class="nx">ui</span><span class="p">.</span><span class="nx">popup</span><span class="p">.</span><span class="nx">content</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">'&lt;b&gt;Closing popup&lt;/b&gt;'</span><span class="p">;</span>
+                <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+                <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                    <span class="nx">ui</span><span class="p">.</span><span class="nx">popup</span><span class="p">.</span><span class="nx">hide</span><span class="p">();</span>
+                <span class="p">},</span> <span class="mi">3000</span><span class="p">);</span>
+            <span class="p">}</span>
+ <span class="p">}</span>
+</code></pre>
+<p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+
+<p><center><em>This area intentionally left blank (see right).</em></center></p>
+<h2 id='3-selfkey-marketplace-configuration'>3: SelfKey Marketplace Configuration</h2>
+<p>There are no special configuration options are available for the SelfKey Marketplace at this point.</p>
+<h3 id='complete-selfkey-marketplace-configuration-example'>Complete SelfKey Marketplace Configuration Example:</h3><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+        <span class="nl">rootEndpoint</span><span class="p">:</span> <span class="s2">"https://kyc-instance-url.com/api/v1/"</span><span class="p">,</span>
+        <span class="nx">endpoints</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">'/templates/:id'</span><span class="p">:</span> <span class="s2">`https://kyc-instance-url.com/api/v1/templates/:id?format=minimum`</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<ul>
+<li>This is a simple integration that will only contain the root endpoint.</li>
+<li>If you are using our compliance solution KYC-Chain, integrations will also contain an override for the template endpoints.</li>
+</ul>
+<h1 id='e-rest-api-spec'>E. REST API Spec</h1><h2 id='overview-4'>Overview</h2>
+<p>Our REST API is broken down into three parts:</p>
+
+<ol>
+<li><strong>Authentication</strong>: Verifying user ownership of a Decentralized Identifier (DID) via a challenge-response protocol.</li>
+<li><strong>SelfKey Extension</strong>: Bridge between the SelfKey Wallet and your website for authentication.</li>
+<li><strong>KYC for New Users</strong>:  Verify identities from existing integrated templates with our compliance tool KYC-Chain.</li>
+</ol>
+
+<aside class="notice">
+NOTE: All communications must be done via a secure SSL connection.
+</aside>
+<h2 id='headers-sent-by-selfkey-identity-wallet'>Headers Sent By SelfKey Identity wallet</h2><h3 id='user-agent'>User-Agent</h3>
+<ul>
+<li>For each API request, the SelfKey Identity Wallet sends the following user agent: SelfKeyIDW/[WALLET_VERSION] where WALLET_VERSION is a semver version of our application.</li>
+<li>Example:  User-Agent: SelfKeyIDW/1.0.0-beta</li>
+</ul>
+<h3 id='origin'>Origin</h3>
+<ul>
+<li>For API requests, the SelfKey Identity Wallet will send an &#39;Origin&#39; header indicating who initialized the request.</li>
+<li>The default value is IDW indicating that the request was initialized by the SelfKey Identity Wallet.</li>
+<li>For our browser plugin SelfKey Extension, it will rely on the SelfKey Identity Wallet to determine which side initialized the request, and the Origin header will be set to this value.</li>
+<li>Example: &quot;Origin: IDW&quot; or &quot;Origin: https://confluence.kyc-chain.com&quot;</li>
+</ul>
+<h2 id='1-authentication'>1: Authentication</h2>
+<ul>
+<li>The goal of this function is to prove that the user has ownership over the presented Decentralized Identifier (DID).</li>
+<li>This is done through a cryptographic challenge-response protocol as detailed below.</li>
+</ul>
+<h3 id='challenge'>Challenge</h3>
+<p>Overview: This request is dispatched by the SelfKey Identity Wallet to start establishing the authentication session with your website.</p>
+<h3 id='request'>Request</h3>
+<p><code>GET /auth/challenge/${publicKey}</code></p>
+
+<p>URL Params:</p>
+
+<ul>
+<li>publicKey - standard Ethereum public key with (Note 0x prefix is required)</li>
+</ul>
+
+<p>Example:</p>
+
+<p><code>GET /auth/challenge/0x3a1076bf45ab87712ad64ccb3b10217737f7faacbf2872e88fdd9a537d8fe266</code></p>
+
+<p>Headers:</p>
+
+<ul>
+<li>User-Agent,</li>
+<li>Origin,</li>
+<li>Accept: application/json</li>
+</ul>
+<h3 id='response'>Response</h3>
+<p>Success (Status Code: 200)</p>
+
+<p>Body:</p>
+
+<p>JSON payload containing one key &#39;jwt&#39;. It will contain the challenge token.</p>
+
+<p><code>{
+  &quot;jwt&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIweDc0NWZhYmQyZWZkYmY5ZGViMzE2NDJiMjA1NGVlMmJjNzg2ZWJlYTA5NmQzNmMwYjFiMzA1ZWRhYWY5ODEzYzZiNDA1MWEzMzQyNjZjOWY0MGI3MTQzODFjMDNkYTVkYTMxNWVjMjA3MDAwZmE3YmI3NDg2OGE1ZTYxNDIxZTMxIiwiaWF0IjoxNTE2MjM5MDIyLCJub25jZSI6IjlWeDFRUmswbzk2UGNKcDhXbnhvNy9DMjdCQnJ0aFdHZTlPcUZ6OGRwa2VjbVNVQ0Q3RnJQNUhpZW5vWUg3OTN1cG1nYmtLNFY3c0JMKzR6YWJkQjJRPT0iLCJzY29wZSI6ImF1dGgvY2hhbGxlbmdlIn0.5V2BBI53C0NOzmaIcvNNg_04O6MmTQc4oFvRJ8vf5i0&quot;
+  }</code></p>
+
+<p>Error: Invalid Public Key (Status Code: 422)</p>
+
+<p>Body:</p>
+
+<p><code>{ &quot;code&quot;: &quot;invalid_key&quot; &quot;message&quot;: &quot;Invalid public key&quot;}</code></p>
+<h3 id='challenge-reply'>Challenge Reply</h3>
+<ul>
+<li>Request is dispatched by the SelfKey Identity Wallet to verify ownership of an Ethereum private key.</li>
+<li>Payload is ECDA signature for the provided nonce. There are five types of responses:</li>
+<li>1) Success, 2) Error - Bad Request, 3) Error - Not Authorized, 4) Error - Forbidden, and 5) Error - Bad Payload.</li>
+<li>Hardware Wallets: For users with Trezor or Ledger, they will have to manually confirm on devices for ECDA signatures.</li>
+</ul>
+
+<p>Request:</p>
+
+<p><code>POST /auth/challenge/</code></p>
+
+<p>Headers:</p>
+
+<ul>
+<li>User-Agent,</li>
+<li>Origin,</li>
+<li>Accept: application/json</li>
+<li>Authorization: challenge token received from challenge endpoint</li>
+</ul>
+
+<p>Body:</p>
+
+<ul>
+<li>JSON payload containing one key &#39;signature&#39;.</li>
+<li>It will contain an ECDA signature generated by signing the nonce with Ethereum private key.</li>
+<li>Represented as hex (rpc sig).</li>
+</ul>
+
+<p><code>{&quot;signature&quot;: &quot;0xf62e386b48761c61d5e0a54d90ba6bea1ee9648d9e26f1301e9be2306843190357c1d1c915244aa171bc34b0c2c6b66ad546ef651eeaa7add8335675e3e5454601&quot;}</code></p>
+<h3 id='responses'>Responses</h3>
+<p>Success (Status Code: 200)</p>
+
+<p>Body:</p>
+
+<p>A JSON payload containing one key &#39;jwt. It will contain the wallet token.</p>
+
+<p><code>{  &quot;jwt&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIweDc0NWZhYmQyZWZkYmY5ZGViMzE2NDJiMjA1NGVlMmJjNzg2ZWJlYTA5NmQzNmMwYjFiMzA1ZWRhYWY5ODEzYzZiNDA1MWEzMzQyNjZjOWY0MGI3MTQzODFjMDNkYTVkYTMxNWVjMjA3MDAwZmE3YmI3NDg2OGE1ZTYxNDIxZTMxIiwiaWF0IjoxNTE2MjM5MDIyLCJub25jZSI6IjlWeDFRUmswbzk2UGNKcDhXbnhvNy9DMjdCQnJ0aFdHZTlPcUZ6OGRwa2VjbVNVQ0Q3RnJQNUhpZW5vWUg3OTN1cG1nYmtLNFY3c0JMKzR6YWJkQjJRPT0iLCJzY29wZSI6ImF1dGgvY2hhbGxlbmdlIn0.5V2BBI53C0NOzmaIcvNNg_04O6MmTQc4oFvRJ8vf5i0&quot;}
+</code></p>
+
+<p>Error - Bad Request (Status Code: 400)</p>
+
+<p><code>{
+  &quot;code&quot;: &quot;token_missing&quot;,
+  &quot;message&quot;: &quot;Missing authorization header&quot;
+}</code></p>
+
+<p>Error - Not Authorized (Status Code: 401)</p>
+
+<p><code>{ &quot;code&quot;: &quot;token_invalid&quot;, &quot;message&quot;: &quot;Invalid token: Missing nonce claim&quot;}</code></p>
+
+<p><code>{&quot;code&quot;: &quot;token_invalid&quot;,&quot;message&quot;: &quot;Malformed authorization header&quot;}</code></p>
+
+<p>Error - Forbidden (Status Code: 403)</p>
+
+<p><code>{&quot;code&quot;: &quot;forbidden&quot;,&quot;message&quot;: &quot;Insufficient permissions&quot;}</code></p>
+
+<p>Error - Bad Payload (Status Code: 422)</p>
+
+<p><code>{&quot;code&quot;: &quot;signature_invalid&quot;,&quot;message&quot;: &quot;Invalid signature&quot;}</code></p>
+
+<p><code>{&quot;code&quot;: &quot;signature_missing&quot;,&quot;message&quot;: &quot;Missing signature&quot;}</code></p>
+<h2 id='2-selfkey-extension'>2: SelfKey Extension</h2><h3 id='create-user-file'>Create User File</h3>
+<p><code>POST /users/files</code></p>
+<h3 id='request-2'>Request</h3>
+<p>Headers</p>
+
+<ul>
+<li>User-Agent</li>
+<li>Origin</li>
+<li>Accept: application/json</li>
+<li>Authorization: wallet token</li>
+<li>Content-Type: multipart/form-data</li>
+</ul>
+
+<p>Body: Binary File Upload</p>
+<h3 id='response-2'>Response</h3>
+<p>Success (Status Code: 200)</p>
+
+<p>Body: JSON object with single key &quot;id&quot; representing the created file id
+<code>{
+   &quot;id&quot;: &quot;file-id-1&quot;
+}</code></p>
+
+<p>Error - Bad Request (Status Code: 400)</p>
+
+<p><code>{
+  &quot;code&quot;: &quot;token_missing&quot;,
+  &quot;message&quot;: &quot;Missing authorization header&quot;
+}</code></p>
+
+<p>Error - Not Authorized (Status Code: 401)</p>
+
+<p><code>{
+  &quot;code&quot;: &quot;token_invalid&quot;,
+  &quot;message&quot;: &quot;Invalid token: Missing nonce claim&quot;
+}</code></p>
+
+<p><code>{
+  &quot;code&quot;: &quot;token_invalid&quot;,
+  &quot;message&quot;: &quot;Malformed authorization header&quot;
+}</code></p>
+
+<p>Error - Forbidden (Status Code: 403)</p>
+
+<p><code>{
+  &quot;code&quot;: &quot;forbidden&quot;,
+  &quot;message&quot;: &quot;Insufficient permissions&quot;
+}</code></p>
+
+<p>Error - Bad Payload (Status Code: 422)</p>
+
+<p><code>{
+  &quot;code&quot;: &quot;file_invalid&quot;,
+  &quot;message&quot;: &quot;Should be a single file&quot;
+}</code></p>
+<h3 id='create-user'>Create User</h3><pre class="highlight plaintext"><code>[
+    { "id": "first_name", "schemaId": "http://platform.selfkey.org/schema/attribute/first-name.json", "value": "First" },
+    { "id": "passport", "schemaId": "https://platform.selfkey.org/schema/attribute/passport.json", "value": {
+         "image": { "mimeType": "image/jpg", "size": 3000000000, "content": "file-id-1"},
+         "issued": "15-05-2019",
+         "expires": "16-05-2019",
+         "selfie": { "mimeType": "image/jpg", "size": "28525854564", "content": "file-id-2"},
+     } },
+     {
+        "id": "nationality",
+        "schemaId": "https://platform.selfkey.org/schema/attribute/nationality.json",
+        "value": { "country": "AT", "denonym": "Austrian"}
+     }
+]
+</code></pre>
+<p><strong>Request</strong>:</p>
+
+<p><code>POST /users</code></p>
+
+<p>Headers:</p>
+
+<ul>
+<li>User-Agent,</li>
+<li>Origin,</li>
+<li>Accept: application/json</li>
+<li>Authorization: wallet token.</li>
+</ul>
+
+<p>Body:</p>
+
+<p>JSON object containing ID attributes from the SelfKey Identity Wallet. Each ID attribute contains at least the following keys:</p>
+
+<ul>
+<li><strong>id</strong> (optional): provided in SelfKey Extension config, used for attributing internal application structure</li>
+<li><strong>schemaId</strong>: The id of one of the supported id attributes. Can be found here: https://platform.selfkey.org/repository.json</li>
+<li><strong>value</strong>: The value of the attribute.</li>
+</ul>
+
+<p>Note, document attributes should have all files uploaded first via the files endpoint and their content replaced by id.</p>
+<h3 id='response-3'>Response</h3>
+<p>Success (Status Code: 201 – Created With No Body)</p>
+
+<p>Error – Bad Request (Status Code: 422)</p>
+
+<p><code>{
+  &quot;code&quot;: &quot;bad_request&quot;,
+  &quot;message&quot;: &quot;Error validating attributes&quot;
+}</code></p>
+<h3 id='get-user-token'>Get User Token</h3>
+<p><strong>Request</strong>:</p>
+
+<p><code>GET /users/token</code></p>
+
+<p>Headers:</p>
+
+<ul>
+<li>User-Agent,</li>
+<li>Origin,</li>
+<li>Accept: application/json</li>
+<li>Authorization: wallet token.</li>
+</ul>
+
+<p>Success (Status Code: 200)</p>
+
+<p>Body:</p>
+
+<p>JSON object, structure is defined by relying party. This object is passed back to your website.</p>
+
+<p><em>Example</em>:</p>
+
+<p><code>{
+  &quot;token&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIweDc0NWZhYmQyZWZkYmY5ZGViMzE2NDJiMjA1NGVlMmJjNzg2ZWJlYTA5NmQzNmMwYjFiMzA1ZWRhYWY5ODEzYzZiNDA1MWEzMzQyNjZjOWY0MGI3MTQzODFjMDNkYTVkYTMxNWVjMjA3MDAwZmE3YmI3NDg2OGE1ZTYxNDIxZTMxIiwic2NvcGUiOiJhdXRoL2xvZ2luIiwiaWF0IjoxNTQ3NjIyNDA1fQ.xajZn2UmKtCT1WeLleye8DoCCcYnbavVnZ5TZ0bK7CM&quot;
+}</code></p>
+
+<p>If your website waits for the response to be parsed and acted upon automatically on client side, the payload should contain one of these two keys:</p>
+
+<ul>
+<li>&quot;token&quot; – Will be posted to [Login Endpoint]</li>
+<li>&quot;redirectTo&quot; – will cause a redirect to the provided URL</li>
+</ul>
+
+<p>Error - Bad Request (Status Code: 400)</p>
+
+<p><code>{
+  &quot;code&quot;: &quot;token_missing&quot;,
+  &quot;message&quot;: &quot;Missing authorization header&quot;
+}</code></p>
+
+<p>Error - Not Authorized (Status Code: 401)</p>
+
+<p><code>{
+  &quot;code&quot;: &quot;token_invalid&quot;,
+  &quot;message&quot;: &quot;Invalid token: Missing nonce claim&quot;
+}</code></p>
+
+<p><code>{
+  &quot;code&quot;: &quot;token_invalid&quot;,
+  &quot;message&quot;: &quot;Malformed authorization header&quot;
+}</code></p>
+
+<p>Error - Forbidden (Status Code: 403)</p>
+
+<p>Body:</p>
+
+<p><code>{
+  &quot;code&quot;: &quot;forbidden&quot;,
+  &quot;message&quot;: &quot;Insufficient permissions&quot;
+}</code></p>
+<h3 id='login-endpoint'>Login Endpoint</h3>
+<p><strong>Request</strong>:</p>
+
+<p><code>POST /login
+</code>
+Headers:</p>
+
+<ul>
+<li>User-Agent – provided by browser</li>
+<li>Origin – provided by browser</li>
+<li>Accept: application/json</li>
+</ul>
+
+<p>Body:</p>
+
+<p>JSON object containing the payload received from /users/token endpoint</p>
+
+<p><code>{
+  &quot;token&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIweDc0NWZhYmQyZWZkYmY5ZGViMzE2NDJiMjA1NGVlMmJjNzg2ZWJlYTA5NmQzNmMwYjFiMzA1ZWRhYWY5ODEzYzZiNDA1MWEzMzQyNjZjOWY0MGI3MTQzODFjMDNkYTVkYTMxNWVjMjA3MDAwZmE3YmI3NDg2OGE1ZTYxNDIxZTMxIiwic2NvcGUiOiJhdXRoL2xvZ2luIiwiaWF0IjoxNTQ3NjIyNDA1fQ.xajZn2UmKtCT1WeLleye8DoCCcYnbavVnZ5TZ0bK7CM&quot;
+}</code></p>
+
+<p><strong>Response</strong>:</p>
+
+<p>Success (Status Code: 200)</p>
+
+<p>Body: JSON object containing &#39;redirectTo&#39; key</p>
+
+<p>Example:</p>
+
+<p><code>{
+  &quot;redirectTo&quot;: &quot;/success.html&quot;
+}</code></p>
+
+<p><code>{
+  &quot;redirectTo&quot;: &quot;/login-failed.html&quot;
+}</code></p>
+<h2 id='3-kyc-selfkey-marketplace'>3: KYC (SelfKey Marketplace)</h2><h3 id='list-templates'>List Templates</h3><pre class="highlight plaintext"><code>[
+    {
+        "name": "Token Sale Signup for Individuals",
+        "description": "For individuals wishing to participate in the Example Co token sale.",
+        "templateId": "507f1f77bcf86cd799439011",
+    },
+    {
+        "name": "Token Sale Signup for Companies",
+        "description": "For companies, trusts or other organizations wishing to participate in the Example Co token sale.",
+        "templateId": "534bad4b8342419e5a94b1d2",
+
+    }
+]
+</code></pre>
+<ul>
+<li>These templates are created to run identity verification checks based on submitted attributes or documents.</li>
+<li>Returns a list of templates for the relying party, and this endpoint does not require Authorization.</li>
+</ul>
+
+<p><strong>Request</strong>:</p>
+
+<p><code>GET /templates</code></p>
+
+<p>Headers</p>
+
+<ul>
+<li>User-Agent,</li>
+<li>Origin,</li>
+<li>Accept: application/json</li>
+</ul>
+
+<p><strong>Response</strong>:</p>
+
+<p>Success (Status Code: 200)</p>
+<h3 id='get-template-details'>Get Template Details</h3><pre class="highlight javascript tab-javascript"><code><span class="s2">`
+{
+  "id": "5c6619ae1ea6440111989852",
+  "description": "Standard Attributes and Documents",
+  "atributes": [
+    {
+      "id": "5c4e6edda58d2900401ba61b",
+      "required": true,
+      "schemaId": "http://platform.selfkey.org/schema/attribute/first-name.json"
+    },
+    {
+      "id": "5c4e6efaa58d2900401ba61d",
+      "required": true,
+      "schemaId": "http://platform.selfkey.org/schema/attribute/last-name.json "
+    },
+    {
+      "id": "5c511c64c7315f003ecfe2dc",
+      "required": true,
+      "schemaId": "http://platform.selfkey.org/schema/attribute/email.json"
+    },
+    {
+      "id": "5c4e6e6ba58d2900401ba615",
+      "required": true,
+      "schemaId": "http://platform.selfkey.org/schema/attribute/bank-statement.json"
+    },
+    {
+      "id": "5c4e6e89a58d2900401ba617",
+      "required": false,
+      "schemaId": "http://platform.selfkey.org/schema/attribute/bank-statement.json"
+    },
+    {
+      "id": "5c4e6ea6a58d2900401ba619",
+      "required": true,
+      "schemaId": "http://platform.selfkey.org/schema/attribute/passport.json"
+    }
+  ],
+  "name": "Standard Attributes"
+`</span>
+</code></pre>
+<p>Returns a specific template details.</p>
+
+<p><strong>Request</strong>:</p>
+
+<p><code>GET /templates/${templateId}</code></p>
+
+<p>URL params:</p>
+
+<ul>
+<li>templateId: the id of the requested template</li>
+</ul>
+
+<p>Headers</p>
+
+<ul>
+<li>User-Agent,</li>
+<li>Origin,</li>
+<li>Accept: application/json</li>
+</ul>
+
+<p><strong>Response</strong>:</p>
+
+<p>Success (Status Code: 200)</p>
+
+<p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+<h3 id='create-kyc-file'>Create KYC File</h3>
+<p><code>POST /files</code></p>
+
+<p><strong>Request</strong>:</p>
+
+<p>Headers:</p>
+
+<ul>
+<li>User-Agent</li>
+<li>Origin</li>
+<li>Accept: application/json</li>
+<li>Authorization: wallet token</li>
+<li>Content-Type: multipart/form-data</li>
+</ul>
+
+<p>Body: binary file upload</p>
+
+<p><strong>Response</strong>:</p>
+
+<p>Success (Status Code: 200)</p>
+
+<p>Body: JSON object with single key &quot;id&quot; representing the created file id</p>
+
+<p><em>Example</em>:</p>
+
+<p><code>{
+   &quot;id&quot;: &quot;file-id-1&quot;
+}</code></p>
+
+<p>Error - Bad Request (Status Code: 400)</p>
+
+<p><code>{
+  &quot;code&quot;: &quot;token_missing&quot;,
+  &quot;message&quot;: &quot;Missing authorization header&quot;
+}</code></p>
+
+<p>Error - Not Authorized (Status Code: 401)</p>
+
+<p><code>{
+  &quot;code&quot;: &quot;token_invalid&quot;,
+  &quot;message&quot;: &quot;Invalid token: Missing nonce claim&quot;
+}</code></p>
+
+<p><code>{
+  &quot;code&quot;: &quot;token_invalid&quot;,
+  &quot;message&quot;: &quot;Malformed authorization header&quot;
+}</code></p>
+
+<p>Error - Forbidden (Status Code: 403)</p>
+
+<p>Body:</p>
+
+<p><code>{
+  &quot;code&quot;: &quot;forbidden&quot;,
+  &quot;message&quot;: &quot;Insufficient permissions&quot;
+}</code></p>
+
+<p>Error - Bad Payload (Status Code: 422)</p>
+
+<p><em>Example</em>:</p>
+
+<p><code>{
+  &quot;code&quot;: &quot;file_invalid&quot;,
+  &quot;message&quot;: &quot;Should be a single file&quot;
+}</code></p>
+<h3 id='get-user-file'>GET User File</h3>
+<p><code>GET /users/files/${fileId}</code></p>
+
+<p><strong>Request</strong>:</p>
+
+<p>URL params:</p>
+
+<ul>
+<li>fileId</li>
+</ul>
+
+<p>Headers:</p>
+
+<ul>
+<li>User-Agent</li>
+<li>Origin</li>
+<li>Accept: application/json</li>
+<li>Authorization: wallet token</li>
+</ul>
+
+<p>Success (Status Code: 200)</p>
+
+<p><code>{ url: &#39;https://myurl.com/documents/23123&#39; }</code></p>
+
+<p>Error - Not Found (Status Code: 404)</p>
+
+<p><code>{ code: &#39;not_found&#39;, message: &#39;File not found&#39; }</code></p>
+
+<p>Error - Not Authorized (Status Code: 401)</p>
+
+<p>Body</p>
+
+<p><code>{
+  &quot;code&quot;: &quot;token_invalid&quot;,
+  &quot;message&quot;: &quot;Invalid token: Missing nonce claim&quot;
+}</code></p>
+
+<p><code>{
+  &quot;code&quot;: &quot;token_invalid&quot;,
+  &quot;message&quot;: &quot;Malformed authorization header&quot;
+}</code></p>
+
+<p>Error - Forbidden (Status Code: 403)</p>
+
+<p>Body:</p>
+
+<p><code>{
+  &quot;code&quot;: &quot;forbidden&quot;,
+  &quot;message&quot;: &quot;Insufficient permissions&quot;
+}</code></p>
+<h3 id='create-kyc-application'>Create KYC Application</h3><pre class="highlight plaintext"><code>
+{
+  "templateId": "5c6533c440e7080070dda1f4",
+  "attributes": [
+    {
+      "id": "5c657861e97908003ec70d19",
+      "schemaId": "http://platform.selfkey.org/schema/attribute/first-name.json",
+      "data": "John"
+    },
+    {
+      "id": "5c657880e97908003ec70d1b",
+      "schemaId": "http://platform.selfkey.org/schema/attribute/last-name.json",
+      "data": "Doe"
+    },
+    {
+      "id": "5c657898e97908003ec70d1d",
+      "schemaId": "http://platform.selfkey.org/schema/attribute/email.json",
+      "data": "john.doe@domain.com"
+    },
+    {
+      "id": "5c6578c4e97908003ec70d1f",
+      "schemaId": "http://platform.selfkey.org/schema/attribute/passport.json",
+      "data": {
+        "image": {
+          "mimeType": "image/png",
+          "size": 50000,
+          "content": "5c6619ae1ea6440111989852"
+        },
+        "issued": "2019-02-19",
+        "expires": "2029-02-19"
+      }
+    }
+  ]
+}
+</code></pre>
+<p><code>POST /applications</code></p>
+
+<p><strong>Request</strong>:</p>
+
+<p>Headers:</p>
+
+<ul>
+<li>User-Agent</li>
+<li>Origin</li>
+<li>Accept: application/json</li>
+<li>Authorization: wallet token</li>
+</ul>
+
+<p>Body: JSON object containing application object</p>
+
+<p>Application object will contain:</p>
+
+<ul>
+<li>templateId – the id of a template which was used to fill application object</li>
+<li>attributes – a list of id attributes, each attribute contains</li>
+<li>id: internal KYC system id assigned to the attribute (from template)</li>
+<li>schemaId: the id of the schema filled (list is available in https://platform.selfkey.org/repository.json)</li>
+<li>data: the data filled according for the schema for this attribute</li>
+</ul>
+
+<p><strong>Response</strong>:</p>
+
+<p>Success (Status Code: 200)</p>
+
+<p>Body: JSON object with single key &quot;id&quot; representing the created file id</p>
+
+<p>Example:</p>
+
+<p><code>{
+  &quot;id&quot;: &quot;5c6623537406490150f93b5f&quot;,
+  &quot;applicationUrl&quot;: &quot;http://localhost/v2/applications/5c6623537406490150f93b5f&quot;
+}</code></p>
+
+<p>Error - Bad Request (Status Code: 400)</p>
+
+<p><code>{
+  &quot;code&quot;: &quot;token_missing&quot;,
+  &quot;message&quot;: &quot;Missing authorization header&quot;
+}</code></p>
+
+<p>Error - Not Authorized (Status Code: 401)</p>
+
+<p>Body</p>
+
+<p><code>{
+  &quot;code&quot;: &quot;token_invalid&quot;,
+  &quot;message&quot;: &quot;Invalid token: Missing nonce claim&quot;
+}</code></p>
+
+<p><code>{
+  &quot;code&quot;: &quot;token_invalid&quot;,
+  &quot;message&quot;: &quot;Malformed authorization header&quot;
+}</code></p>
+
+<p>Error - Forbidden (Status Code: 403)</p>
+
+<p>Body:</p>
+
+<p><code>{
+  &quot;code&quot;: &quot;forbidden&quot;,
+  &quot;message&quot;: &quot;Insufficient permissions&quot;
+}</code></p>
+
+<p>Error - Bad Payload (Status Code: 422, Several Errors Possible)</p>
+
+<p>Example:</p>
+
+<p><code>{
+  &quot;code&quot;: &quot;file_invalid&quot;,
+  &quot;message&quot;: &quot;Should be a single file&quot;
+}</code></p>
+<h3 id='list-kyc-applications'>List KYC Applications</h3><pre class="highlight plaintext"><code>[
+  {
+    "id": "5c6e013704fb92059af59147",
+    "template": "5c6dfa25b0745105685253bd",
+    "statusName": "In Progress",
+    "currentStatus": 6
+  },
+  {
+    "id": "5c6e17dd069cfc060b256802",
+    "template": "5c6dfa25b0745105685253bd",
+    "statusName": "In Progress",
+    "currentStatus": 6
+  }
+]
+</code></pre>
+<p><code>GET /applications</code></p>
+
+<p><strong>Request</strong>:</p>
+
+<p>Headers:</p>
+
+<ul>
+<li>User-Agent</li>
+<li>Origin</li>
+<li>Accept: application/json</li>
+<li>Authorization: wallet token</li>
+</ul>
+
+<p><strong>Response</strong>:</p>
+
+<p>Success (Status Code: 200)</p>
+
+<p>Body: JSON object containing a list of application objects</p>
+
+<p>Error - Bad Request (Status Code: 400)</p>
+
+<p><code>{
+  &quot;code&quot;: &quot;token_missing&quot;,
+  &quot;message&quot;: &quot;Missing authorization header&quot;
+}</code></p>
+
+<p>Error - Not Authorized (Status Code: 401)</p>
+
+<p>Body</p>
+
+<p><code>{
+  &quot;code&quot;: &quot;token_invalid&quot;,
+  &quot;message&quot;: &quot;Invalid token: Missing nonce claim&quot;
+}</code></p>
+
+<p><code>{
+  &quot;code&quot;: &quot;token_invalid&quot;,
+  &quot;message&quot;: &quot;Malformed authorization header&quot;
+}</code></p>
+
+<p>Error - Forbidden (Status Code: 403)</p>
+
+<p>Body</p>
+
+<p><code>{
+  &quot;code&quot;: &quot;forbidden&quot;,
+  &quot;message&quot;: &quot;Insufficient permissions&quot;
+}</code></p>
+<h3 id='update-kyc-applications'>Update KYC Applications</h3><pre class="highlight plaintext"><code>{
+  "templateId": "5c6533c440e7080070dda1f4",
+  "attributes": [
+    {
+      "id": "5c657861e97908003ec70d19",
+      "schemaId": "http://platform.selfkey.org/schema/attribute/first-name.json",
+      "data": "John"
+    },
+    {
+      "id": "5c657880e97908003ec70d1b",
+      "schemaId": "http://platform.selfkey.org/schema/attribute/last-name.json",
+      "data": "Doe"
+    },
+    {
+      "id": "5c657898e97908003ec70d1d",
+      "schemaId": "http://platform.selfkey.org/schema/attribute/email.json",
+      "data": "john.doe@domain.com"
+    },
+    {
+      "id": "5c6578c4e97908003ec70d1f",
+      "schemaId": "http://platform.selfkey.org/schema/attribute/passport.json",
+      "data": {
+        "image": {
+          "mimeType": "image/png",
+          "size": 50000,
+          "content": "5c6619ae1ea6440111989852"
+        },
+        "issued": "2019-02-19",
+        "expires": "2029-02-19"
+      }
+    }
+  ]
+}
+</code></pre>
+<p><code>PATCH /applications/${applicationId}</code></p>
+
+<p>Takes attributes from payload and updates them inside application object on server</p>
+
+<p>URL params:</p>
+
+<ul>
+<li>applicationId – The id of the application to update</li>
+</ul>
+
+<p><strong>Request</strong>:</p>
+
+<p>Headers:</p>
+
+<ul>
+<li>User-Agent</li>
+<li>Origin</li>
+<li>Accept: application/json</li>
+<li>Authorization: wallet token</li>
+</ul>
+
+<p>Body: JSON object containing application object</p>
+
+<p>Application object will contain:</p>
+
+<ul>
+<li>templateId – the id of a template which was used to fill application object</li>
+<li>attributes – a list of id attributes, each attribute contains</li>
+<li>id: internal kyc system id assigned to the attribute ( from template)</li>
+<li>schemaId: the id of the schema filled (list is available in https://platform.selfkey.org/repository.json)</li>
+<li>data: the data filled according for the schema for this attribute</li>
+</ul>
+
+<p><strong>Response</strong>:</p>
+
+<p>Success (Status Code: 204)</p>
+
+<p>Error - Bad Request (Status Code: 400)</p>
+
+<p><code>{
+  &quot;code&quot;: &quot;token_missing&quot;,
+  &quot;message&quot;: &quot;Missing authorization header&quot;
+}</code></p>
+
+<p>Error - Not Authorized (Status Code: 401)</p>
+
+<p>Body:</p>
+
+<p><code>{
+  &quot;code&quot;: &quot;token_invalid&quot;,
+  &quot;message&quot;: &quot;Invalid token: Missing nonce claim&quot;
+}</code></p>
+
+<p><code>{
+  &quot;code&quot;: &quot;token_invalid&quot;,
+  &quot;message&quot;: &quot;Malformed authorization header&quot;
+}</code></p>
+
+<p>Error - Forbidden (Status Code: 403)</p>
+
+<p>Body:</p>
+
+<p><code>{
+  &quot;code&quot;: &quot;forbidden&quot;,
+  &quot;message&quot;: &quot;Insufficient permissions&quot;
+}</code></p>
+
+<p>Error - Bad Payload (Status Code: 422, Several Errors Possible)</p>
+
+<p><em>Example</em>:</p>
+
+<p><code>{
+  &quot;message&quot;: &quot;Attribute referenced files not found&quot;
+}</code></p>
+<h3 id='get-application-details'>Get Application Details</h3><pre class="highlight javascript tab-javascript"><code><span class="s2">`{
+  "id": "5c6e013704fb92059af59147",
+  "payments": [],
+  "template": "5c6dfa25b0745105685253bd",
+  "statusName": "In Progress",
+  "currentStatus": 6
+}`</span>
+</code></pre>
+<p><code>GET /applications/${applicationId}</code></p>
+
+<p>Returns all available details about a specific application</p>
+
+<p>URL params:</p>
+
+<ul>
+<li>applicationId – The id of the application.</li>
+</ul>
+
+<p><strong>Request</strong></p>
+
+<p>Headers:</p>
+
+<ul>
+<li>User-Agent</li>
+<li>Origin</li>
+<li>Accept: application/json</li>
+<li>Authorization: wallet token</li>
+</ul>
+
+<p><strong>Response</strong></p>
+
+<p>Success (Status Code: 200)</p>
+
+<p>Body: JSON object containing a list of application objects</p>
+
+<p>Error - Bad Request (Status Code: 400)</p>
+
+<p><code>{
+  &quot;code&quot;: &quot;token_missing&quot;,
+  &quot;message&quot;: &quot;Missing authorization header&quot;
+}</code></p>
+
+<p>Error - Not Authorized (Status Code: 401)</p>
+
+<p>Body</p>
+
+<p><code>{
+  &quot;code&quot;: &quot;token_invalid&quot;,
+  &quot;message&quot;: &quot;Invalid token: Missing nonce claim&quot;
+}</code></p>
+
+<p><code>{
+  &quot;code&quot;: &quot;token_invalid&quot;,
+  &quot;message&quot;: &quot;Malformed authorization header&quot;
+}</code></p>
+
+<p>Error - Forbidden (Status Code: 403)</p>
+
+<p>Body:</p>
+
+<p><code>{
+  &quot;code&quot;: &quot;forbidden&quot;,
+  &quot;message&quot;: &quot;Insufficient permissions&quot;
+}</code></p>
+<h3 id='create-kyc-application-payment'>Create KYC Application Payment</h3>
+<p><code>POST /applications/${applicationId}/payments</code></p>
+
+<p><strong>Request</strong></p>
+
+<p>Headers:</p>
+
+<ul>
+<li>User-Agent</li>
+<li>Origin</li>
+<li>Accept: application/json</li>
+<li>Authorization: wallet token</li>
+</ul>
+
+<p>Body: JSON object containing application payment</p>
+
+<p>Application payment object will contain:</p>
+
+<ul>
+<li>transactionHash – the hash of an ethereum transaction</li>
+</ul>
+
+<p><code>{
+  &quot;transactionHash&quot;: &quot;0x8b69a0ca303305a92d8d028704d65e4942b7ccc9a99917c8c9e940c9d57a9662&quot;
+}</code></p>
+
+<p><strong>Response</strong></p>
+
+<p>Success (Status Code: 200)</p>
+<pre class="highlight javascript tab-javascript"><code><span class="s2">`{
+  "createdAt": "2019-02-21T03:44:47.555Z",
+  "id": "5c6e1eaf049ff100646cedd8",
+  "transactionHash": "0x8b69a0ca303305a92d8d028704d65e4942b7ccc9a99917c8c9e940c9d57a9662"
+}`</span>
+</code></pre>
+<p>Body: JSON object with created payment details</p>
+
+<p>Error - Bad Request (Status Code: 400)</p>
+
+<p><code>{
+  &quot;code&quot;: &quot;token_missing&quot;,
+  &quot;message&quot;: &quot;Missing authorization header&quot;
+}</code></p>
+
+<p>Error - Not Authorized (Status Code: 401)</p>
+
+<p>Body</p>
+
+<p><code>{
+  &quot;code&quot;: &quot;token_invalid&quot;,
+  &quot;message&quot;: &quot;Invalid token: Missing nonce claim&quot;
+}</code></p>
+
+<p><code>{
+  &quot;code&quot;: &quot;token_invalid&quot;,
+  &quot;message&quot;: &quot;Malformed authorization header&quot;
+}</code></p>
+
+<p>Error - Forbidden (Status Code: 403)</p>
+
+<p>Body:</p>
+
+<p><code>{
+  &quot;code&quot;: &quot;forbidden&quot;,
+  &quot;message&quot;: &quot;Insufficient permissions&quot;
+}</code></p>
+
+<p>Error - Bad Payload (Status Code: 422, Several Errors Possible)</p>
+
+<p>Example:</p>
+
+<p><code>{
+  &quot;message&quot;: &quot;Transaction hash is missing&quot;
+}</code></p>
+<h1 id='f-selfkey-client-lib'>F. SelfKey Client Lib</h1>
+<ul>
+<li>SelfKey Client Lib is a client library used to integrate our Chrome browser plugin SelfKey Extension to your website.</li>
+<li>We have four sample client integrations with Javascript, Angular 1, React, and Vue.</li>
+<li>Repository: https://github.com/SelfKeyFoundation/selfkey-js-client</li>
+<li>NOTE: All npm repos should be grouped under <code>@seflkey</code> organization prefix</li>
+</ul>
+<h2 id='1-javacript-client'>1. Javacript Client</h2>
+<ul>
+<li>URL: https://www.npmjs.com/package/lws-js-client</li>
+</ul>
+
+<p><strong>Sample Integration</strong>:</p>
+
+<ul>
+<li>https://github.com/SelfKeyFoundation/selfkey-js-client/tree/master/packages/js/example</li>
+<li>NOTE: This is a sample integration, the API may be further updated since then.</li>
+</ul>
+
+<p><strong>Usage</strong>:</p>
+
+<ul>
+<li>NPM with webpack or similar tools</li>
+</ul>
+
+<p><strong>Install With NPM</strong></p>
+
+<p><code>npm install lws-js-client --save</code></p>
+
+<p><strong>Usage in Code</strong></p>
+
+<p><code>import lws from &#39;lws-js-client&#39;
+lws.init(config);</code></p>
+
+<p><strong>CDN</strong></p>
+
+<ul>
+<li>We use https://unpkg.com/ as our CDN provider</li>
+<li>Include the following script in your webpage:</li>
+</ul>
+
+<p><strong>Include Tag In Page</strong></p>
+
+<p><code>&lt;script src=&quot;https://unpkg.com/lws-js-client@1.0.0-beta.26/dist/lws.min.js&quot;&gt;&lt;/script&gt;</code></p>
+
+<p>Unpkg works directly with npm, and you can include any file in the repository, the structure of the link is:</p>
+
+<p><code>https://unpkg.com/&lt;REPOSITORY_NAME&gt;@&lt;PACKAGE_VERSION&gt;/&lt;FILE_PATH&gt;</code></p>
+
+<p><strong>Usage In Code</strong></p>
+
+<p><code>lws.init(config);</code></p>
+
+<p><strong>API Reference</strong>:</p>
+
+<p>Init</p>
+
+<ul>
+<li>The init method should be called when you want to display the LWS button (the most common use case is to do it on page load).</li>
+<li>The init method can be applied for to setup multiple buttons on the page, an array of container elements or a query selector should be provided for that.</li>
+<li>The init method can be called only once. If you need to change your setup, you need to call lws.teardown() first, then you can call it again.</li>
+</ul>
+
+<p><code>lws.init(config)</code></p>
+
+<p>Arguments:</p>
+
+<ul>
+<li>config – LWS process configuration as explained in Relying Party Configuration.</li>
+</ul>
+
+<p>Prerequisites:</p>
+
+<ul>
+<li>DOM should be loaded</li>
+<li>Integrator should know query selector, or provide a DOM element to serve as container for LWS button</li>
+</ul>
+
+<p>Init Example:</p>
+<pre class="highlight shell tab-shell"><code>
+lws.init<span class="o">({</span>
+            ui: <span class="o">{</span>
+                el: <span class="s1">'.lwsClient'</span>
+            <span class="o">}</span>,
+            website: <span class="o">{</span>
+                name: <span class="s1">'LWS Example'</span>,
+                url: <span class="s1">'http://localhost:3030/'</span>,
+                termsUrl: <span class="s1">'http://localhost:3030/terms.html'</span>,
+                policyUrl: <span class="s1">'http://localhost:3030/policy.html'</span>
+            <span class="o">}</span>,
+            rootEndpoint: <span class="s1">'/api/v1/selfkey'</span>,
+            attributes: <span class="o">[</span>
+                <span class="o">{</span>
+                    id: <span class="s1">'first_name'</span>,
+                    label: <span class="s1">'First Name'</span>,
+                    schemaId: <span class="s1">'http://platform.selfkey.org/schema/attribute/first-name.json'</span>
+                <span class="o">}</span>,
+                <span class="o">{</span>
+                    id: <span class="s1">'last_name'</span>,
+                    label: <span class="s1">'Last Name'</span>,
+                    schemaId: <span class="s1">'http://platform.selfkey.org/schema/attribute/last-name.json'</span>
+                <span class="o">}</span>,
+                <span class="o">{</span>
+                    id: <span class="s1">'national_id'</span>,
+                    label: <span class="s1">'National ID'</span>,
+                    schemaId: <span class="s1">'http://platform.selfkey.org/schema/attribute/national-id.json'</span>
+                <span class="o">}</span>
+           <span class="o">]</span>
+<span class="o">})</span>;
+</code></pre>
+<p><strong>teardown</strong></p>
+
+<p>An opposite method to <em>init</em>, will destroy all that <em>init</em> have setup.</p>
+
+<ul>
+<li>This method is useful when you want to change the config provided to init. You would call teardown and then init with new config</li>
+<li>In web app when navigation happens in javascript, this method should be called for clean up</li>
+</ul>
+
+<p><strong>Usage in Code</strong></p>
+
+<p><code>lws.teardown();</code></p>
+<h2 id='2-angular-1-client'>2. Angular 1 Client</h2>
+<ul>
+<li>URL: https://www.npmjs.com/package/lws-angularjs-client</li>
+</ul>
+
+<p>Sample Integration:</p>
+
+<ul>
+<li>https://github.com/SelfKeyFoundation/selfkey-js-client/tree/master/packages/angularjs/example</li>
+<li>NOTE: This is a sample integration, the API may be further updated since then.</li>
+</ul>
+
+<p><strong>Usage</strong></p>
+
+<p>NPM with webpack or similar tools</p>
+
+<p><strong>Install With NPM</strong></p>
+
+<p><code>npm install lws-angularjs-client --save</code></p>
+
+<p><strong>Usage in Code</strong></p>
+<pre class="highlight plaintext"><code>require('lws-angularjs-client');
+
+angular.module('lwsExample', ['lwsSdk'])
+            .controller('login', ['$scope', ($scope) =&gt; {
+                $scope.website = {
+                    name: 'LWS Example',
+                    url: 'http://localhost:3031/',
+                    termsUrl: 'http://localhost:3031/terms.html',
+                    policyUrl: 'http://localhost:3031/policy.html',
+                };
+                $scope.rootEndpoint = 'http://localhost:3030/api/v1/selfkey',
+                $scope.attributes = [
+                    {
+                        id: "first_name",
+                        label: "First Name",
+                        schemaId: "http://platform.selfkey.org/schema/attribute/first-name.json"
+                    },
+                    {
+                        id: "last_name",
+                        label: "Last Name",
+                        schemaId: "http://platform.selfkey.org/schema/attribute/last-name.json"
+                    },
+                    {
+                        id: "email",
+                        label: "Email"
+                        schemaId: "http://platform.selfkey.org/schema/attribute/email.json"
+                    }
+                ];
+                $scope.onAuthResponse = (err, res, ui) =&gt; {
+                    console.log('OnAuthResponse', err, res, ui);
+                }
+            }]);
+</code></pre>
+<p><strong>Usage In Code</strong>:</p>
+
+<p><code>&lt;lws-button website=&quot;website&quot; attributes=&quot;attributes&quot; root-endpoint=&quot;rootEndpoint&quot; on-auth-response=&quot;onAuthResponse(err,res,ui)&quot;&gt;&lt;/lws-button&gt;</code></p>
+
+<p><strong>CDN</strong></p>
+
+<p>Include the following script on your webpage:</p>
+
+<p><code>&lt;script src=&quot;http://unpkg.com/angular@1.6.10/angular.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/lws-angularjs-client@1.0.0-beta.26/dist/lws-angularjs-client.min.js&quot;&gt;&lt;/script&gt;</code></p>
+
+<p><strong>Usage In Code</strong>:</p>
+<pre class="highlight plaintext"><code>
+&lt;div ng-controller="login"&gt;
+        &lt;lws-button website="website" attributes="attributes" root-endpoint="rootEndpoint" on-auth-response="onAuthResponse(err,res,ui)"&gt;&lt;/lws-button&gt;
+&lt;/div&gt;
+
+
+&lt;script type="text/javascript&gt;
+
+
+angular.module('lwsExample', ['lwsSdk'])
+            .controller('login', ['$scope', ($scope) =&gt; {
+                $scope.website = {
+                    name: 'LWS Example',
+                    url: 'http://localhost:3031/',
+                    termsUrl: 'http://localhost:3031/terms.html',
+                    policyUrl: 'http://localhost:3031/policy.html',
+                };
+                $scope.rootEndpoint = 'http://localhost:3030/api/v1/selfkey',
+                $scope.attributes = [
+                    {
+                        id: "first_name",
+                        label: "First Name",
+                        schemaId: "http://platform.selfkey.org/schema/attribute/first-name.json"
+                    },
+                    {
+                        id: "last_name",
+                        label: "Last Name",
+                        schemaId: "http://platform.selfkey.org/schema/attribute/last-name.json"
+                    },
+                    {
+                        id: "email",
+                        label: "Email"
+                        schemaId: "http://platform.selfkey.org/schema/attribute/email.json"
+                    }
+                ];
+                $scope.onAuthResponse = (err, res, ui) =&gt; {
+                    console.log('OnAuthResponse', err, res, ui);
+                }
+            }]);
+
+
+&lt;/script&gt;
+
+
+</code></pre><h2 id='3-react-client'>3. React Client</h2>
+<p>URL: https://www.npmjs.com/package/lws-react-client</p>
+<h3 id='sample-integration'>Sample Integration</h3>
+<ul>
+<li>https://github.com/SelfKeyFoundation/selfkey-js-client/tree/master/packages/react/example</li>
+<li>NOTE: This is a sample integration, the API may be further updated since then.</li>
+</ul>
+
+<p><strong>Usage</strong></p>
+
+<p>NPM with webpack or similar tools</p>
+
+<p><strong>Install With NPM</strong></p>
+
+<p><code>npm install lws-react-client --save</code></p>
+
+<p><strong>Usage in Code</strong></p>
+
+<p>`import { LWSButton } from &#39;lws-react-client&#39;;</p>
+
+<p>const config = {
+    website: {
+        name: &#39;LWS Example&#39;,
+        url: &#39;http://localhost:3032/&#39;,
+        termsUrl: &#39;http://localhost:3030/terms.html&#39;,
+        policyUrl: &#39;http://localhost:3030/policy.html&#39;
+    },
+    rootEndpoint: &#39;http://localhost:3030/api/v1/selfkey&#39;,
+    attributes: [
+        {
+            id: &#39;first_name&#39;,
+            label: &#39;First Name&#39;,
+            schemaId: &#39;http://platform.selfkey.org/schema/attribute/first-name.json&#39;
+        },
+        {
+            id: &#39;last_name&#39;,
+            label: &#39;Last Name&#39;,
+            schemaId: &#39;http://platform.selfkey.org/schema/attribute/last-name.json&#39;
+        },
+        {
+            id: &#39;email&#39;,
+            label: &#39;Email&#39;,
+            schemaId: &#39;http://platform.selfkey.org/schema/attribute/email.json&#39;
+        }
+    ]
+};
+ReactDOM.render((<LWSButton />), document.getElementById(&#39;root&#39;))`</p>
+
+<p><strong>CDN</strong></p>
+
+<p>Include the following script in your webpage:</p>
+
+<p><code>&lt;script src=&quot;http://unpkg.com/react@16.5.0/umd/react.production.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;http://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/lws-react-client@1.0.0-beta.26/dist/lws-react-client.min.js&quot;&gt;&lt;/script&gt;</code></p>
+
+<p><strong>Usage in Code</strong></p>
+<pre class="highlight shell tab-shell"><code>
+&lt;div ng-controller<span class="o">=</span><span class="s2">"login"</span>&gt;
+        &lt;lws-button <span class="nv">website</span><span class="o">=</span><span class="s2">"website"</span> <span class="nv">attributes</span><span class="o">=</span><span class="s2">"attributes"</span> root-endpoint<span class="o">=</span><span class="s2">"rootEndpoint"</span> on-auth-response<span class="o">=</span><span class="s2">"onAuthResponse(err,res,ui)"</span>&gt;&lt;/lws-button&gt;
+&lt;/div&gt;
+
+
+&lt;script&gt;
+            ReactDOM.render<span class="o">(</span>
+                React.createElement<span class="o">(</span>lwsReact.LWSButton, <span class="o">{</span>
+                    website: <span class="o">{</span>
+                        name: <span class="s1">'LWS Example'</span>,
+                        url: <span class="s1">'http://localhost:3032/'</span>,
+                        termsUrl: <span class="s1">'http://localhost:3030/terms.html'</span>,
+                        policyUrl: <span class="s1">'http://localhost:3030/policy.html'</span>
+                    <span class="o">}</span>,
+                    rootEndpoint: <span class="s1">'http://localhost:3030/api/v1/selfkey'</span>,
+                    attributes: <span class="o">[</span>
+                        <span class="o">{</span>
+                            id: <span class="s1">'first_name'</span>,
+                            label: <span class="s1">'First Name'</span>,
+                            attribute:
+                                <span class="s1">'http://platform.selfkey.org/schema/attribute/first-name.json'</span>
+                        <span class="o">}</span>,
+                        <span class="o">{</span>
+                            id: <span class="s1">'last_name'</span>,
+                            label: <span class="s1">'Last Name'</span>,
+                            attribute: <span class="s1">'http://platform.selfkey.org/schema/attribute/last-name.json'</span>
+                        <span class="o">}</span>,
+                        <span class="o">{</span>
+                            id: <span class="s1">'email'</span>,
+                            label: <span class="s1">'Email'</span>,
+                            schemaId: <span class="s1">'http://platform.selfkey.org/schema/attribute/email.json'</span>
+                        <span class="o">}</span>
+                    <span class="o">]</span>
+                <span class="o">})</span>,
+                document.getElementById<span class="o">(</span><span class="s1">'root'</span><span class="o">)</span>
+            <span class="o">)</span>;
+ &lt;/script&gt;
+
+</code></pre><h2 id='4-vue-client'>4. Vue Client</h2>
+<p>URL: https://www.npmjs.com/package/lws-vue-client</p>
+<h3 id='sample-integration-2'>Sample Integration</h3>
+<ul>
+<li>https://github.com/SelfKeyFoundation/selfkey-js-client/tree/master/packages/vue/example</li>
+<li>NOTE: This is a sample integration, the API may be further updated since then.</li>
+</ul>
+
+<p><strong>Usage</strong>
+NPM with webpack or similar tools</p>
+
+<p><strong>Install With NPM</strong></p>
+
+<p><code>npm install lws-vue-client --save</code></p>
+
+<p><strong>Usage in Code</strong></p>
+<pre class="highlight vue tab-vue"><code>
+require('lws-veu-client');
+
+new Vue({
+            el: '#root',
+            data: {
+                website: {
+                    name: 'LWS Example',
+                    url: 'http://localhost:3033/',
+                    termsUrl: 'http://localhost:3030/terms.html',
+                    policyUrl: 'http://localhost:3030/policy.html'
+                },
+                rootEndpoint: 'http://localhost:3030/api/v1/selfkey',
+                attributes: [
+                    {
+                        id: "first_name",
+                        label: "First Name",
+                        schemaId: "http://platform.selfkey.org/schema/attribute/first-name.json"
+                    },
+                    {
+                        id: "last_name",
+                        label: "Last Name",
+                        attribute: "http://platform.selfkey.org/schema/attribute/last-name.json"
+                    }
+                ],
+            }
+        });
+
+</code></pre>
+<p><strong>Usage in Code</strong></p>
+
+<p><code>&lt;lws-button v-bind:website=&quot;website&quot; v-bind:attributes=&quot;attributes&quot; v-bind:root-endpoint=&quot;rootEndpoint&quot;&gt;&lt;/lws-button&gt;</code></p>
+
+<p><strong>CDN</strong></p>
+
+<p>Include the following script in your webpage:</p>
+
+<p><strong>Include Tag in Page</strong></p>
+
+<p><code>&lt;script src=&quot;http://unpkg.com/vue@2.5.17/dist/vue.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/lws-vue-client@1.0.0-beta.26/dist/lws-vue-client.min.js&quot;&gt;&lt;/script&gt;</code></p>
+
+<p><strong>Usage in Code</strong></p>
+<pre class="highlight vue tab-vue"><code>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"root"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;lws-button</span> <span class="na">v-bind:website=</span><span class="s">"website"</span> <span class="na">v-bind:attributes=</span><span class="s">"attributes"</span> <span class="na">v-bind:root-endpoint=</span><span class="s">"rootEndpoint"</span><span class="nt">&gt;&lt;/lws-button&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;</span><span class="k">script</span> <span class="na">type=</span><span class="s">"text/javascript&gt;
+
+new Vue({
+            el: '#root',
+            data: {
+                website: {
+                    name: 'LWS Example',
+                    url: 'http://localhost:3033/',
+                    termsUrl: 'http://localhost:3030/terms.html',
+                    policyUrl: 'http://localhost:3030/policy.html'
+                },
+                rootEndpoint: 'http://localhost:3030/api/v1/selfkey',
+                attributes: [
+                    {
+                        id: "</span><span class="na">first_name</span><span class="err">",</span>
+                        <span class="na">label:</span> <span class="err">"</span><span class="na">First</span> <span class="na">Name</span><span class="err">",</span>
+                        <span class="na">schemaId:</span> <span class="err">"</span><span class="na">http:</span><span class="err">//</span><span class="na">platform</span><span class="err">.</span><span class="na">selfkey</span><span class="err">.</span><span class="na">org</span><span class="err">/</span><span class="na">schema</span><span class="err">/</span><span class="na">attribute</span><span class="err">/</span><span class="na">first-name</span><span class="err">.</span><span class="na">json</span><span class="err">"</span>
+                    <span class="err">},</span>
+                    <span class="err">{</span>
+                        <span class="na">id:</span> <span class="err">"</span><span class="na">last_name</span><span class="err">",</span>
+                        <span class="na">label:</span> <span class="err">"</span><span class="na">Last</span> <span class="na">Name</span><span class="err">",</span>
+                        <span class="na">attribute:</span> <span class="err">"</span><span class="na">http:</span><span class="err">//</span><span class="na">platform</span><span class="err">.</span><span class="na">selfkey</span><span class="err">.</span><span class="na">org</span><span class="err">/</span><span class="na">schema</span><span class="err">/</span><span class="na">attribute</span><span class="err">/</span><span class="na">last-name</span><span class="err">.</span><span class="na">json</span><span class="err">"</span>
+                    <span class="err">}</span>
+                <span class="err">],</span>
+            <span class="err">}</span>
+        <span class="err">});</span>
+
+<span class="err">&lt;/</span><span class="na">script</span><span class="nt">&gt;</span>
+
+</code></pre><h2 id='node-js'>Node.JS</h2>
+<p>TBD by SelfKey Team  </p>
+<h2 id='asp-net'>ASP.NET</h2>
+<p>TBD by SelfKey Team  </p>
+<h2 id='selfkey-service'>SelfKey Service</h2>
+<p>TBD by SelfKey Team  </p>
+<h1 id='errors'>Errors</h1>
+<p>The SelfKey API uses the following error codes:</p>
 
 <table><thead>
 <tr>
@@ -447,57 +2176,31 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 </thead><tbody>
 <tr>
 <td>400</td>
-<td>Bad Request -- Your request is invalid.</td>
+<td>Bad Request -- Missing authorization header.</td>
 </tr>
 <tr>
 <td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
+<td>Not Authorized -- Authentication token invalid, malformed authorization header, or missing nonce claim.</td>
 </tr>
 <tr>
 <td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+<td>Forbidden -- Insufficient permissions.</td>
 </tr>
 <tr>
 <td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
+<td>File Not Found -- Not found</td>
 </tr>
 <tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+<td>422</td>
+<td>Bad Payload -- Many possibilities: Invalid file, referenced files not found, invalid signature, or invalid public key.</td>
 </tr>
 </tbody></table>
 
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
                 <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="shell">shell</a>
           </div>
       </div>
     </div>
